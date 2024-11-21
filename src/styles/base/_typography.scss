@@ -1,0 +1,138 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+// Base typography settings
+body {
+  font-family: 'Roboto', sans-serif;  // Primary body font
+  font-size: 16px;
+  line-height: 1.5;
+  color: $primary-text;
+  background-color: $white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;  // Heading font
+  font-weight: 600;
+  color: $primary-text;
+  margin-bottom: 15px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;  // 16px
+  line-height: 1.6;
+  color: $secondary-text;
+  margin-bottom: 20px;
+}
+
+// Link styling
+a {
+  color: $soft-blue;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+h1 {
+    font-size: 2.5rem;  // 40px
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;  // 32px
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;  // 24px
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;  // 16px
+    line-height: 1.7;  // Increased line height for readability
+    margin-bottom: 20px;
+  }
+  
+  
+  // List styles for features, amenities, etc.
+  ul, ol {
+    font-size: 1rem;  // 16px
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  .button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;  // Bold text for emphasis
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;  // 16px
+  
+    &:hover {
+      background-color: darken($vibrant-orange, 10%);
+    }
+  }
+  input, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;  // 16px
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: $primary-text;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-weight: 500;
+    
+    &:focus {
+      border-color: $primary-text;
+      outline: none;
+      box-shadow: 0px 5px 6px rgba(0.1, 0.1, 0.1, 0.2);
+     
+      
+      
+    }
+  }
+  ::placeholder { 
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2rem;  // 32px
+    }
+  
+    h2 {
+      font-size: 1.75rem;  // 28px
+    }
+  
+    h3 {
+      font-size: 1.5rem;  // 24px
+    }
+  
+    p, li {
+      font-size: 0.9rem;  // 14px
+    }
+  
+    .button {
+      font-size: 0.875rem;  // 14px
+    }
+  }
+  
