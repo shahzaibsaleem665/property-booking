@@ -29,30 +29,35 @@
 }
 .header__middle {
     display: flex;
-    width: auto;
-    justify-content: space-between;
+    width: 480px;
+    background-color: white;
+    border-radius: 30px;
     align-items: center;
-    input {
-        width: 300px;
-        border-radius: 50px;
-        border: 1px solid $secondary-text;
+   .header__input { 
+        @include input(white, 200px);
+        flex-shrink: 0; /* Prevent shrinking of input field */
         position: relative;
-        padding: 10px 40px 10px 20px;
-    font-size: 1rem;
-    }
-    .MuiSvgIcon-root {
-        font-size: 30px;
-        position: absolute;
-        margin-left: 13.5%;
-        margin-bottom: 12px;
+        margin: 5px;
+        margin-right: 0px;
+   }
+    .search__icon {
+        font-size: 45px;
+        padding: 8px;
+        margin-left: 26px;
+        color: white;
         cursor: pointer;
-        color: $soft-blue;
-    }
-    .date__picker {
-        width: 100px;
-        position: absolute;
-
-    }
+        background-color: $soft-blue;
+        flex-shrink: 0;
+        border-radius: 30px;
+        &:hover {
+            background-color: #2F6AA5;
+        }
+}
+.range {
+        flex-shrink:0; /* Prevent shrinking of range element */
+        margin-left: 0px;
+        position: relative;
+}
 }
 .header__right {
     align-items: center;

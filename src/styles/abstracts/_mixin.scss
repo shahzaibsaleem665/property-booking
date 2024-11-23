@@ -14,14 +14,27 @@ font-size: 14px;
       background-color: ($light-gray, 10%);
       transform: scale(1.05);
     }
-  
+
     &:active {
         background-color: ($light-gray, 15%);
       transform: scale(0.98);
     }
   }
 
-  
+  @mixin input ( $color, $width: 300px ) {
+    width: $width;
+    background-color: $color;
+    border-radius: 50px;
+    border: 1px solid $secondary-text;
+    padding: 10px 10px 10px 15px;
+  font-size: 1rem;
+
+  &:hover { 
+    background-color: $light-gray;
+    cursor: pointer;
+  }
+  }
+
 
   // Responsiveness
 

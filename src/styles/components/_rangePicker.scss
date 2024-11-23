@@ -1,0 +1,81 @@
+/* DateRangePicker.scss */
+
+/* Hide everything except the calendar */
+.rdrDefinedRangesWrapper,
+.rdrDateRangePickerWrapper > button {
+  display: none;
+}
+
+/* Customize the calendar appearance */
+.rdrCalendarWrapper {
+  background-color: $white;
+  padding: 10px;
+}
+
+/* Remove green color from today's date */
+.rdrDayToday .rdrDayNumber span {
+  background-color: transparent;
+  color: $dark-charcoal;
+}
+.rdrDateDisplayItem { 
+    display: none;
+}
+
+/* General styling for days */
+.rdrDayNumber span {
+  color: $dark-charcoal;
+}
+
+.rdrDaySelected .rdrDayNumber span {
+  background-color: $vibrant-orange;
+  color: $white;
+}
+
+.rdrDayDisabled span {
+  color: $secondary-text;
+}
+.range__picker { 
+    display: flex;
+    .input__container { 
+      display: flex;
+      align-items: center;
+      width: 250px;
+      background-color: pink; 
+    
+
+    }
+    .start, .end {
+        @include input(white, 100px);
+        margin: 5px;
+        gap: 0;
+        margin-left: 0px;
+        
+    }
+    .end { 
+        margin-left: 8px;
+    }
+}
+.picker-container {
+    position: absolute;; /* Position it below the input field */
+    z-index: 1000;
+    margin-top: 45px;
+    width: auto; /* Adjust the width as needed */
+    background-color: white;
+    border: 1px solid $dark-charcoal;
+    border-radius: 8px;
+}
+
+
+
+.clear-icon { 
+    padding: 2px !important;
+    margin-left: -32px !important;
+    
+    &:hover { 
+    background-color: $vibrant-orange !important;
+    }
+}
+.clear-icon > .MuiSvgIcon-root { 
+    font-size: large !important;
+    color: black !important;
+}
