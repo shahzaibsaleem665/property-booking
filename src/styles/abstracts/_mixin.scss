@@ -25,6 +25,7 @@ font-size: 14px;
     width: $width;
     background-color: $color;
     border-radius: 50px;
+    height: 57px;
     border: 1px solid $secondary-text;
     padding: 10px 10px 10px 15px;
   font-size: 1rem;
@@ -32,6 +33,7 @@ font-size: 14px;
   &:hover { 
     background-color: $light-gray;
     cursor: pointer;
+   
   }
   }
 

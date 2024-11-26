@@ -1,4 +1,5 @@
 import React from 'react'
+import LocationSearch from './LocationSearch'
 
 function HeroSection() {
   return (
@@ -9,6 +10,7 @@ function HeroSection() {
         </div>
         <div className="hero__contentRight">
     <button>This is button</button>
+
         </div>
         </div>
     </div>

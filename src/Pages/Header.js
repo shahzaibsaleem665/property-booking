@@ -1,32 +1,41 @@
-import React from 'react'
-import logo from '../Images/logo.svg'
+import React, { useState } from 'react';
+import logo from '../Images/logo.svg';
 import SearchIcon from '@mui/icons-material/Search';
-import { Avatar, IconButton } from '@mui/material';
+import { Avatar } from '@mui/material';
 import HeroSection from '../Components/HeroSection';
 import RangePicker from '../Components/RangePicker';
+import LocationSearch from '../Components/LocationSearch';
 
 function Header() {
+  const [inputValue, setInputValue] = useState('');
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
   return (
     <div className='header'>
-        <div className="header__content">
+      <div className="header__content">
         <div className="header__left">
-    <img src={logo} alt='logo'   />
-    <h3>Homyra</h3>
+          <img src={logo} alt='logo' />
+          <h3>Homyra</h3>
         </div>
         <div className="header__middle">
-        <input type='text' className='header__input' placeholder='Search Properties' />     
-        <div className="range">
-        <RangePicker />
-        </div>
-        <SearchIcon className='search__icon'/>  
+          {/* Pass inputValue to LocationSearch */}
+          <div className="header__input">
+            <LocationSearch />
+          </div>
+          <div className="range">
+            <RangePicker />
+          </div>
+          <SearchIcon className='search__icon' />
         </div>
         <div className="header__right">
-            <Avatar />
+          <Avatar />
         </div>
+      </div>
+      <HeroSection />
     </div>
-    <HeroSection />
-    </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

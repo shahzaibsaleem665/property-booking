@@ -35,32 +35,28 @@
   color: $secondary-text;
 }
 .range__picker { 
-    display: flex;
-    .input__container { 
-      display: flex;
-      align-items: center;
-      width: 250px;
-      background-color: pink; 
-    
+  display: flex;/* Allow the inputs to wrap */
 
-    }
-    .start, .end {
-        @include input(white, 100px);
-        margin: 5px;
-        gap: 0;
-        margin-left: 0px;
-        
-    }
-    .end { 
-        margin-left: 8px;
-    }
+
+  .input-container { 
+      display: flex;
+      align-items: center; /* Align elements properly */
+  }
+
+  .start, .end {
+      @include input($white, 120px); /* Keep input styling */
+      margin: 0px; /* Reset margin if needed */
+  /* Ensure inputs take full container width */
+      box-sizing: border-box; /* To include padding and borders in width calculation */
+  }
 }
+
 .picker-container {
     position: absolute;; /* Position it below the input field */
     z-index: 1000;
-    margin-top: 45px;
+    margin-top: 60px;
     width: auto; /* Adjust the width as needed */
-    background-color: white;
+    background-color: $white;
     border: 1px solid $dark-charcoal;
     border-radius: 8px;
 }
@@ -68,14 +64,16 @@
 
 
 .clear-icon { 
-    padding: 2px !important;
-    margin-left: -32px !important;
-    
+     padding: 2px !important;
+    position: absolute; /* Make sure the icon is placed outside of the input */
+    right: 35px; /* Adjust icon's right positioning */
+    top: 10%; /* Vertically center the icon */
+    transform: translateY(-20%); /* Ensure it's properly centered */
     &:hover { 
     background-color: $vibrant-orange !important;
     }
 }
 .clear-icon > .MuiSvgIcon-root { 
     font-size: large !important;
-    color: black !important;
+    color: $black !important;
 }

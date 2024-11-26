@@ -29,24 +29,25 @@
 }
 .header__middle {
     display: flex;
-    width: 480px;
-    background-color: white;
+    width: 550px;
+    background-color: $white;
     border-radius: 30px;
+    height: 61px;
     align-items: center;
-   .header__input { 
-        @include input(white, 200px);
-        flex-shrink: 0; /* Prevent shrinking of input field */
-        position: relative;
-        margin: 5px;
-        margin-right: 0px;
+    justify-content: space-between;
+    
+   
+    .header__input {
+    align-items: center;
+    justify-content: center;
    }
     .search__icon {
-        font-size: 45px;
-        padding: 8px;
-        margin-left: 26px;
-        color: white;
+        font-size: 54px;
+        padding: 10px;
+        margin: auto;
+        color: $white;
         cursor: pointer;
-        background-color: $soft-blue;
+        background-color: $medium-green;
         flex-shrink: 0;
         border-radius: 30px;
         &:hover {

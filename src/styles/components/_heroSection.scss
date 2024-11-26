@@ -12,7 +12,7 @@ background-size: cover;
     margin: auto;
     .hero__contentRight {
         button {
-            @include button($dark-charcoal, white);
+            @include button($dark-charcoal, $white);
         }
     }
 }
