@@ -34,46 +34,54 @@
 .rdrDayDisabled span {
   color: $secondary-text;
 }
-.range__picker { 
-  display: flex;/* Allow the inputs to wrap */
 
+.range__picker {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
 
-  .input-container { 
-      display: flex;
-      align-items: center; /* Align elements properly */
+  .start__input::placeholder,
+  .end__input::placeholder {
+    font-weight: bold; // Make it stand out like a label
+    color: #999; // Lighter color than regular input text
+  }
+  .range__pickerStart, .ranger__pickerEnd {
+    position: relative; /* Needed for absolute positioning of the clear icon */
   }
 
-  .start, .end {
-      @include input($white, 120px); /* Keep input styling */
-      margin: 0px; /* Reset margin if needed */
-  /* Ensure inputs take full container width */
-      box-sizing: border-box; /* To include padding and borders in width calculation */
+  .start__input, .end__input {
+    @include input ($white, 100px);
+    margin: 0px;
+    box-sizing: border-box;
   }
-}
 
-.picker-container {
-    position: absolute;; /* Position it below the input field */
-    z-index: 1000;
-    margin-top: 60px;
-    width: auto; /* Adjust the width as needed */
-    background-color: $white;
-    border: 1px solid $dark-charcoal;
-    border-radius: 8px;
-}
-
-
-
-.clear-icon { 
-     padding: 2px !important;
-    position: absolute; /* Make sure the icon is placed outside of the input */
-    right: 35px; /* Adjust icon's right positioning */
-    top: 10%; /* Vertically center the icon */
-    transform: translateY(-20%); /* Ensure it's properly centered */
-    &:hover { 
-    background-color: $vibrant-orange !important;
+  .clear-icon {
+    position: absolute;
+    padding: 2px;
+    top: 50%;
+    right: 10px; /* Adjust to fit your layout */
+    transform: translateY(-50%); /* Center the icon vertically */
+    z-index: 10; /* Ensure it’s on top of the input field */
+    
+    &:hover {
+      background-color: $vibrant-orange !important; /* Customize hover effect */
     }
-}
-.clear-icon > .MuiSvgIcon-root { 
-    font-size: large !important;
-    color: $black !important;
+
+    .MuiSvgIcon-root {
+      font-size: 16px; /* Adjust size of the icon */
+      color: $black; /* Icon color */
+    }
+  }
+  .picker__container {
+    position: absolute; /* Position it below the input */
+    top: 100%; /* Place it directly under the input field */
+    margin-left: -110px;
+    margin-top: 5px;
+    width: 100%; /* Ensure it's the same width as the input field */
+    z-index: 9999; /* Ensure the calendar is above other content */
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+  }
 }

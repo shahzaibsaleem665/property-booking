@@ -46,7 +46,7 @@ function RangePicker() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       // Close picker when clicking outside of input or picker
-      const pickerContainer = document.querySelector('.picker-container');
+      const pickerContainer = document.querySelector('.picker__container');
       const inputContainer = document.querySelector('.range__picker');
       if (
         pickerContainer && !pickerContainer.contains(event.target) &&
@@ -67,10 +67,10 @@ function RangePicker() {
 
   return (
     <div className="range__picker">
-      <div className="input-container" onClick={togglePicker}>
+      <div className="range__pickerStart" onClick={togglePicker}>
         <input
           type="text"
-          className="start"
+          className="start__input"
           readOnly
           value={startDate ? `${formatDate(startDate)}` : ''}
           onClick={(e) => { e.stopPropagation(); togglePicker(); }}
@@ -83,15 +83,17 @@ function RangePicker() {
         )}
       </div>
 
-      <div className="input-container" onClick={togglePicker}>
+      <div className="ranger__pickerEnd" onClick={togglePicker}>
         <input
           type="text"
-          className="end"
+          className="end__input"
           readOnly
           value={endDate ? `${formatDate(endDate)}` : ''}
           onClick={(e) => { e.stopPropagation(); togglePicker(); }}
           placeholder="End Date"
         />
+        
+
         {startDate && endDate && (
           <IconButton className="clear-icon">
           <ClearIcon onClick={clearDates} />
@@ -100,7 +102,7 @@ function RangePicker() {
       </div>
 
       {showPicker && (
-        <div className="picker-container">
+        <div className="picker__container">
           <DateRangePicker
             ranges={[selectionRange]}
             minDate={new Date()}

@@ -24,7 +24,7 @@ function Header() {
           <div className="header__input">
             <LocationSearch />
           </div>
-          <div className="range">
+          <div className="header__range">
             <RangePicker />
           </div>
           <SearchIcon className='search__icon' />
