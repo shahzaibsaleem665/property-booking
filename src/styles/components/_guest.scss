@@ -1,0 +1,42 @@
+.guest {
+    .guest__input {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+  
+    .guest__inputField {
+      @include input($white, 110px, $light-gray, $light-gray);
+      margin: 0px;
+      text-align: center;
+  
+      // Hide the number input's arrows (chevrons)
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+  
+      &[type=number] {
+        -moz-appearance: textfield;
+      }
+    }
+  
+    .guest__icon {
+      position: absolute;
+      cursor: pointer;
+      font-size: 24px;
+        &:hover {
+            background-color: $vibrant-orange;
+            border-radius: 30px;
+        }
+      &.left {
+        left: 8px;  // Position the left icon
+      }
+  
+      &.right {
+        right: 8px;  // Position the right icon
+      }
+    }
+  }
+  

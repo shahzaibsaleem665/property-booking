@@ -3,7 +3,7 @@
   align-items: center
 }
 .search__section > input {
-  @include input ($white, 250px);
+  @include input($white, 250px, $light-gray, $light-gray);
   margin: auto;
 }
 .autocomplete-dropdown-container {

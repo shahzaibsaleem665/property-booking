@@ -5,12 +5,10 @@ import { Avatar } from '@mui/material';
 import HeroSection from '../Components/HeroSection';
 import RangePicker from '../Components/RangePicker';
 import LocationSearch from '../Components/LocationSearch';
+import Guest from '../Components/Guest';
 
 function Header() {
-  const [inputValue, setInputValue] = useState('');
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  
 
   return (
     <div className='header'>
@@ -22,10 +20,14 @@ function Header() {
         <div className="header__middle">
           {/* Pass inputValue to LocationSearch */}
           <div className="header__input">
-            <LocationSearch />
+            <LocationSearch 
+ />
           </div>
           <div className="header__range">
             <RangePicker />
+          </div>
+          <div className="header__guest">
+            <Guest />
           </div>
           <SearchIcon className='search__icon' />
         </div>

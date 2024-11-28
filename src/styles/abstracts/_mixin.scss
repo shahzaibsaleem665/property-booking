@@ -21,19 +21,24 @@ font-size: 14px;
     }
   }
 
-  @mixin input ( $color, $width: 300px ) {
+  @mixin input ( $color, $width: 300px, $focus-bg, $unfocused-bg: $light-gray ) {
     width: $width;
     background-color: $color;
     border-radius: 50px;
     height: 45px;
-    border: 1px solid $secondary-text;
+    border: none;
     padding: 10px 10px 10px 15px;
   font-size: 1rem;
+  &:focus {
+    background-color: $focus-bg; // Background color for the focused input
+  }
+  &:focus-within input:not(:focus) {
+    background-color: $unfocused-bg; // Background color for unfocused inputs when any input is focused
+  }
   
   &:hover { 
     background-color: $light-gray;
     cursor: pointer;
-   
   }
   }
 

@@ -41,17 +41,13 @@
   position: relative;
   width: fit-content;
 
-  .start__input::placeholder,
-  .end__input::placeholder {
-    font-weight: bold; // Make it stand out like a label
-    color: #999; // Lighter color than regular input text
-  }
+  
   .range__pickerStart, .ranger__pickerEnd {
     position: relative; /* Needed for absolute positioning of the clear icon */
   }
 
   .start__input, .end__input {
-    @include input ($white, 100px);
+    @include input($white, 100px, $white, $light-gray);
     margin: 0px;
     box-sizing: border-box;
   }

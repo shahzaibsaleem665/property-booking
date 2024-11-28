@@ -5,6 +5,7 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 const LocationSearch = () => {
   const [address, setAddress] = useState('');
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [inputClicked, setInputClicked] = useState(false);
 
   // Handle script load event
   const handleScriptLoad = () => {
@@ -20,6 +21,9 @@ const LocationSearch = () => {
   // Handle input change
   const handleInputChange = (newAddress) => {
     setAddress(newAddress);
+    if (!inputClicked) {
+      setInputClicked(true); // Set to true when the input is clicked for the first time
+    }
   };
 
   // Search options - restricting the search to Australia
@@ -31,6 +35,7 @@ const LocationSearch = () => {
   const handleSelect = async (selectedAddress) => {
     try {
       setAddress(selectedAddress);
+      setInputClicked(false); // Reset input clicked state after selecting an address
       const results = await geocodeByAddress(selectedAddress);
       const latLng = await getLatLng(results[0]);
       console.log('Selected Address:', selectedAddress);
@@ -54,7 +59,7 @@ const LocationSearch = () => {
         onLoad={handleScriptLoad}
         onError={handleScriptError}
       />
-  
+
       {/* Only show PlacesAutocomplete when the script has loaded */}
       {isScriptLoaded && (
         <PlacesAutocomplete
@@ -65,25 +70,28 @@ const LocationSearch = () => {
         >
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <div className='search__section'>
-                
               <input
-            
                 {...getInputProps({
                   placeholder: 'Search Property',
+                  onFocus: () => {
+                    if (!inputClicked) {
+                      setInputClicked(true); // Trigger suggestions when the input is focused
+                    }
+                  },
                 })}
               />
               <div className="autocomplete-dropdown-container">
                 {loading && <div>Loading...</div>}
-                {suggestions.map((suggestion) => {
+                {inputClicked && suggestions.map((suggestion) => {
                   const className = suggestion.active
                     ? 'suggestion-item--active'
                     : 'suggestion-item';
-                  
+
                   return (
                     <div
                       {...getSuggestionItemProps(suggestion, {
                         className,
-                        onClick: () => handleSelect(suggestion.description)
+                        onClick: () => handleSelect(suggestion.description),
                       })}
                     >
                       <span>{suggestion.description}</span>
