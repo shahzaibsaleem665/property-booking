@@ -6,7 +6,7 @@
     }
   
     .guest__inputField {
-      @include input($white, 110px, $light-gray, $light-gray);
+      @include input($white, 110px);
       margin: 0px;
       text-align: center;
   

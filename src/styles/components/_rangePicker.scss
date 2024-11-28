@@ -47,7 +47,7 @@
   }
 
   .start__input, .end__input {
-    @include input($white, 100px, $white, $light-gray);
+    @include input($white, 100px);
     margin: 0px;
     box-sizing: border-box;
   }

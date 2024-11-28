@@ -15,17 +15,10 @@
 }
 .header__left { 
     img {
+        width: 130px;
         height: 60px;
-        width: 80px;
-        padding: 2px;
     }
-    h3 {
-        color: $dark-charcoal;
-    }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
+    
 }
 .header__middle { 
     display: flex;
@@ -38,9 +31,7 @@
     border: 1px solid $light-gray;
     padding: 1px;
 
-    &:focus-within {
-        background-color: $light-gray; // Change to the color you want
-      }
+    
     .search__icon{ 
         font-size: 43px;
         background-color: $soft-blue;

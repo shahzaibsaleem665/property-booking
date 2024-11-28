@@ -1,12 +1,14 @@
 // For button 
 
-@mixin button($color, $bg-color, $padding: 10px 20px, $radius: 5px) {
+@mixin button($color,  $bg-color, $padding: 10px 15px, $radius: 5px) {
     color: $color;
     background-color: $bg-color;
     padding: $padding;
     border: 2px solid $color;
     border-radius: $radius;
-font-size: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
   
@@ -17,24 +19,20 @@ font-size: 14px;
 
     &:active {
         background-color: ($light-gray, 15%);
-      transform: scale(0.98);
+        transform: scale(0.98);
     }
   }
 
-  @mixin input ( $color, $width: 300px, $focus-bg, $unfocused-bg: $light-gray ) {
+  @mixin input ( $color, $width: 300px) {
     width: $width;
     background-color: $color;
     border-radius: 50px;
     height: 45px;
-    border: none;
     padding: 10px 10px 10px 15px;
+    border: none;
+    border-right: 2px solid $light-gray;
   font-size: 1rem;
-  &:focus {
-    background-color: $focus-bg; // Background color for the focused input
-  }
-  &:focus-within input:not(:focus) {
-    background-color: $unfocused-bg; // Background color for unfocused inputs when any input is focused
-  }
+  
   
   &:hover { 
     background-color: $light-gray;

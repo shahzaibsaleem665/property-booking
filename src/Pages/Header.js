@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../Images/logo.svg';
+import logo from '../Images/logo.png';
 import SearchIcon from '@mui/icons-material/Search';
 import { Avatar } from '@mui/material';
 import HeroSection from '../Components/HeroSection';
@@ -15,7 +15,7 @@ function Header() {
       <div className="header__content">
         <div className="header__left">
           <img src={logo} alt='logo' />
-          <h3>Homyra</h3>
+         
         </div>
         <div className="header__middle">
           {/* Pass inputValue to LocationSearch */}
