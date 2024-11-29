@@ -6,13 +6,11 @@
   .filter-button {
     @include input ($white, 60px);
   
-  }
+}
   
-  .dropdown-menu {
-   
+.dropdown-menu {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     position: absolute;
     align-items: center;
     top: 50px;
@@ -26,23 +24,92 @@
     overflow-y: auto;
     padding: 5px;
     z-index: 10;
-  }
-  
-  .dropdown-item {
-    padding: 8px;
-    margin: auto;
-    margin-top: 15px;
-    font-size: 12px;
-    border: 1px solid $light-gray;
-    border-radius: 30px;
-    display: flex;
-    cursor: pointer;
-    &:hover {
-      background-color: $light-gray;
+    .lease__type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .lease__typeText {
+            display: flex;
+            gap: 20px;
+            p { 
+                border: 1px solid $light-gray;
+                padding: 8px;
+                border-radius: 30px;
+                font-size: 12px;
+                font-weight: 500;
+                text-transform: capitalize;
+                cursor: pointer;
+                &:hover {
+                    background-color: $vibrant-orange;
+                }
+
+                &.selected {
+                    background-color: $vibrant-orange;
+                    color: $white;
+                }
+            }
+        }
+
     }
-    &.selected {
-        background-color: $vibrant-orange;
-        color: white;
+    .price__range {
+        margin-top: auto;
+        overflow: hidden;
+        width: 280px;
+        h4 {
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .price-range-slider {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          .MuiSlider-rail {
+            background-color: $soft-orange;
+          }
+    
+          .MuiSlider-track {
+            background-color: $soft-orange; // Custom track color
+          }
+    
+          .MuiSlider-thumb {
+            background-color: $soft-orange; // Custom thumb color// Thumb border
+           
+          }
+          
+        }
+        .price-range-labels {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          margin-top: 10px;
+          font-size: 14px;
+          color: $secondary-text;
+        }
       }
+      
+.filter__types {
+        display: flex;
+        flex-wrap: wrap;        
+    .dropdown-item {
+        padding: 8px;
+        margin: auto;
+        margin-top: 15px;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid $light-gray;
+        border-radius: 30px;
+        display: flex;
+        cursor: pointer;
+       
+        &:hover {
+          background-color: $light-gray;
+        }
+        &.selected {
+            background-color: $vibrant-orange;
+            color: white;
+          }
+    }
   }
-  
+}
