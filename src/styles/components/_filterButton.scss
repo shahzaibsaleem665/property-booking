@@ -1,0 +1,48 @@
+.filter-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .filter-button {
+    @include input ($white, 60px);
+  
+  }
+  
+  .dropdown-menu {
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    align-items: center;
+    top: 50px;
+    left: -320%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 5px;
+    z-index: 10;
+  }
+  
+  .dropdown-item {
+    padding: 8px;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 12px;
+    border: 1px solid $light-gray;
+    border-radius: 30px;
+    display: flex;
+    cursor: pointer;
+    &:hover {
+      background-color: $light-gray;
+    }
+    &.selected {
+        background-color: $vibrant-orange;
+        color: white;
+      }
+  }
+  

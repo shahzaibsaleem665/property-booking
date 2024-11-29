@@ -30,17 +30,15 @@
     border-radius: 30px;
     border: 1px solid $light-gray;
     padding: 1px;
-
-    
     .search__icon{ 
         font-size: 43px;
-        background-color: $soft-blue;
+        background-color: $vibrant-orange;
         border-radius: 30px;
         padding: 8px;
         margin: 2px;
-        &:hover { 
-            background: $vibrant-orange;
-            cursor: pointer;
+        cursor: pointer;
+        &:hover {
+            background-color: $soft-orange;
         }
     }
 }

@@ -1,7 +1,7 @@
 .hero__section {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 80%), 
                 url('https://images.unsplash.com/photo-1504233529578-6d46baba6d34?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    height: 50vh; /* Ensures the height does not exceed 50% of the viewport height */
+    height: 55vh; /* Ensures the height does not exceed 50% of the viewport height */
     width: 100%;
     background-size: cover; /* Ensures the full image is shown */
     background-repeat: no-repeat;
@@ -36,8 +36,9 @@
         z-index: -1; /* Ensure it stays behind the content */
     }
     img {
-        height: 50px;
-        width: 70px;;
+        height: 40px;
+        width: 40px;
+        margin-bottom: 20px;
     }
     img, h1,p,button {
         position: relative;

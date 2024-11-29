@@ -1,19 +1,19 @@
 // Primary Colors
-$soft-blue: #4A90E2;
-$white: #FFFFFF;
-$black : black;
+$white: #FFFFFF;                // Background or main surfaces
+$black: #000000;            // Slightly softer than black for readability
+$secondary-text: #9E9E9E;       // Muted text
 
 // Secondary Colors
-$light-gray: #F5F5F5;
-$dark-charcoal: #333333;
+$light-gray: #F5F5F5;           // Background highlights
+$dark-charcoal: #333333;        // Dark elements or headings
 
 // Accent Colors
-$medium-green: #4CAF50;
-$warm-beige: #F7E8D8;
+$warm-beige: #F7E8D8;           // Subtle highlights or section backgrounds
+$cool-gray: #E0E0E0;            // Borders or dividers (added for contrast)
 
 // Call-to-Action Colors
-$vibrant-orange: #FF7043;
+$vibrant-orange: #FFAC1C;       // CTAs and buttons
+$soft-orange: #FCBA12;          // Hover or active states for CTAs
 
-// Text Colors
+// Primary text color
 $primary-text: $dark-charcoal;
-$secondary-text: #9E9E9E;
