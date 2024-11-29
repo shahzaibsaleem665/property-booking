@@ -38,7 +38,6 @@ function Header() {
           <Avatar />
         </div>
       </div>
-      <HeroSection />
     </div>
   );
 }
