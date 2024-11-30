@@ -47,7 +47,7 @@ const FilterButtons = () => {
         <div className="dropdown-menu">
             {/* Lease Types */}
           <div className="lease__type">
-            <h4>Lease Type</h4>
+            <h4>Stay Type</h4>
             <div className="lease__typeText">
               <p
                 className={`dropdown-item ${leaseType === 'short term' ? 'selected' : ''}`}

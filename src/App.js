@@ -20,8 +20,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      {/* <Header />
-      <HeroSection /> */}
+       <Header />
+      <HeroSection /> 
       
     </div>
   );
