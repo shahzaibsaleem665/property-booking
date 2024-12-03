@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import { Visibility, VisibilityOff } from '@mui/icons-material';  // Material UI Icons
-import { backdropClasses } from '@mui/material';
+import google_icon from '../Images/google_icon.png'
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -9,6 +9,7 @@ function SignUp() {
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.trim() === '') {
@@ -20,10 +21,11 @@ function SignUp() {
     }
   };
 
-  const handleGoogleResponse = (response) => {
-    console.log('Google Response:', response);
-    // Handle Google login logic
-  };
+  // Handle Google login response
+  const login = useGoogleLogin({
+    onSuccess: (response) => console.log('Google Login Success:', response),
+    onError: () => console.error('Google Login Error'),
+  });
 
   // Toggle password visibility
   const handleTogglePassword = () => {
@@ -75,12 +77,11 @@ function SignUp() {
           <div className="social__login">
             <p>Or sign in using:</p>
 
-            {/* Google Login Button */}
-            <GoogleLogin
-              onSuccess={handleGoogleResponse}
-              onError={(error) => console.error('Google Sign-In Error', error)}
-              useOneTap
-            />
+            {/* Custom Google Login Button */}
+            <button className="google__button" onClick={login}>
+              <img src={google_icon} alt="Google Icon" className="google__icon" />
+              Continue with Google
+            </button>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import Header from './Pages/Header';
 import './styles/main.scss';
 import HeroSection from './Components/HeroSection';
 import SignUp from './Components/SignUp';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import {
   BrowserRouter as Router,
   Route,
@@ -16,7 +17,9 @@ function App() {
       <Router>
         <Switch>
           <Route path='/register' >
-          <SignUp />
+          <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+      <SignUp />
+    </GoogleOAuthProvider>
           </Route>
         </Switch>
       </Router>
