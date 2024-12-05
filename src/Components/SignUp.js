@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import { Visibility, VisibilityOff } from '@mui/icons-material';  // Material UI Icons
-import google_icon from '../Images/google_icon.png'
+import google_icon from '../Images/google_icon.png';
+import facebook_icon from '../Images/facebook_icon.png';
+import mail_icon from '../Images/mail_icon.png';
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -81,6 +83,15 @@ function SignUp() {
             <button className="google__button" onClick={login}>
               <img src={google_icon} alt="Google Icon" className="google__icon" />
               Continue with Google
+            </button>
+            <button className="facebook__button" onClick={login}>
+              <img src={facebook_icon} alt="Facebook Icon" className="facebook__icon" />
+              Continue with Facebook
+            </button>
+
+            <button className="email__button" onClick={login}>
+              <img src={mail_icon} alt="Mail Icon" className="mail__icon" />
+              Continue with Email
             </button>
           </div>
         </div>

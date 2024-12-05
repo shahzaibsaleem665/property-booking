@@ -14,9 +14,9 @@
 .hero__content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     color: #fff;
     position: relative;
+    justify-content: center;
     padding: 20px;
     margin-left: 100px;
     width: 400px; /* Adjust this value as needed */
@@ -38,19 +38,22 @@
     img {
         height: 40px;
         width: 40px;
+        margin-top: 40px;
         margin-bottom: 20px;
     }
     img, h1,p,button {
         position: relative;
         z-index: 1;
     }
-    button {
+    .hero__button {
         @include button($black, $vibrant-orange);
         width: 160px;
-        display: flex;
-        align-items: center;
-        margin-left: auto;
-        align-self: flex-end;
+        display: flex;  justify-content: center;
+        align-items: center; /* Ensures the button content is centered */
+        position: absolute; /* Position it absolutely within the section */
+        right: 20px; /* Adjust for distance from the right edge */
+        bottom: 20px;
+        ;
         .MuiSvgIcon-root {
             font-size: x-large;
         }

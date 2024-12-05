@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     background-color: $white;
+    
 }
 .header__content { 
     display: flex;
@@ -12,6 +13,7 @@
     width: 90%;
     padding-top: 10px;
     align-items: center;
+   
 }
 .header__left { 
     img {
@@ -52,3 +54,45 @@
     }
 }
 
+.custom__drawer .MuiDrawer-paper {
+    display: flex ;
+    background-color: $light-gray;
+    .MuiIconButton-root {
+        margin: 10px;
+        background-color: $vibrant-orange;
+        &:hover {
+            background-color: $soft-orange;
+        }
+    }
+.drawer__content {
+    width: 250px;
+    display: flex;  
+    margin-top: 20%;
+    .custom__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-top: 20px;
+        
+      }
+      
+    .custom__listItem {
+        margin-top: 5px;
+        display: flex;
+        border: 1px solid $dark-charcoal;
+        width: 230px;
+        cursor: pointer;
+        border-radius: 30px;
+        &:hover {
+            background-color: $soft-orange;
+        }
+    }
+      
+    .list__itemIcon .MuiSvgIcon-root {
+        color: black;
+    }
+}
+}
+  

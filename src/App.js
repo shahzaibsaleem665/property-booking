@@ -21,10 +21,14 @@ function App() {
       <SignUp />
     </GoogleOAuthProvider>
           </Route>
+          <Route exact path="/">
+              <Header />
+              <HeroSection />
+            </Route>
+
         </Switch>
       </Router>
-       <Header />
-      <HeroSection /> 
+      
       
     </div>
   );
