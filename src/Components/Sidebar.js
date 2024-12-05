@@ -40,7 +40,7 @@ function Sidebar({ drawerOpen, handleDrawerToggle, isLoggedIn, handleLogin, hand
       )}
       <div className="drawer__content">
         {isLoggedIn ? (
-          <List className="custom__list">
+          <List className="custom__list" style={{marginTop: '20px'}}>
             <ListItem button onClick={handleDrawerToggle} className="custom__listItem">
               <ListItemIcon className="list__itemIcon"><PersonIcon /></ListItemIcon>
               <ListItemText primary="Profile" className="custom__listItemText" />
@@ -69,7 +69,6 @@ function Sidebar({ drawerOpen, handleDrawerToggle, isLoggedIn, handleLogin, hand
       </div>
       <hr/>
       <div className="drawer__contentBottom">
-      
         <p>Follow us on</p>
         <div className="social__button">
         <FacebookIcon />

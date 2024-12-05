@@ -13,13 +13,15 @@
 }
 
 /* Remove green color from today's date */
-.rdrDayToday .rdrDayNumber span {
-  background-color: transparent;
+.rdrDayToday .rdrDayNumber span  {
   color: $dark-charcoal;
+  
+  
 }
 .rdrDateDisplayItem { 
     display: none;
 }
+
 
 /* General styling for days */
 .rdrDayNumber span {

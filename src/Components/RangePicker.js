@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
-import PeopleIcon from '@mui/icons-material/People';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import ClearIcon from '@mui/icons-material/Clear';
 import { IconButton } from '@mui/material';
@@ -107,6 +106,7 @@ function RangePicker() {
             ranges={[selectionRange]}
             minDate={new Date()}
             onChange={handleSelect}
+            rangeColors={["#FFAC1C"]}
           />
           
         </div>
