@@ -1,0 +1,98 @@
+
+.custom__drawer .MuiDrawer-paper {
+    display: flex ;
+    height: 100%;
+    justify-content: space-between;
+    background-color: $white;
+
+    
+    .MuiIconButton-root {
+        margin: 10px;
+        background-color: $vibrant-orange;
+        &:hover {
+            background-color: $soft-orange;
+        }
+    }
+
+    .user__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20%;
+      }
+      
+      .user__avatar   {
+        margin: 5px;
+      }
+      
+      .user__details {
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0px;
+      p {
+        margin: 0px;
+        font-size: 12px;
+      }
+    }
+
+    .drawer__content {
+    height: 100%;
+    width: 250px;
+    display: flex;  
+    .custom__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0px;
+        
+      }
+      
+    .custom__listItem {
+        margin-top: 5px;
+        display: flex;
+        border: 1px solid $dark-charcoal;
+        width: 230px;
+        cursor: pointer;
+        border-radius: 30px;
+        &:hover {
+            background-color: $soft-orange;
+        }
+    }
+      
+    .list__itemIcon .MuiSvgIcon-root {
+        color: black;
+    }
+}
+.drawer__contentBottom {
+    display: flex;
+    max-height: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+        color: $dark-charcoal;
+        margin: 0px;
+        margin-left: 10px;
+    }
+    .social__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .MuiSvgIcon-root {
+            color: $black;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: x-large;
+
+            &:hover {
+                color: $soft-orange;
+            }
+        }
+    }
+}
+}
+  

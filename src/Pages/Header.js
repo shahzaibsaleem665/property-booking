@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import logo_black from '../Images/logo_black.svg';
 import SearchIcon from '@mui/icons-material/Search';
-import { Avatar, Drawer, List, ListItem, ListItemText, IconButton, ListItemIcon } from '@mui/material'; // Import necessary components
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Avatar } from '@mui/material';
+import Sidebar from '../Components/Sidebar';
 import RangePicker from '../Components/RangePicker';
 import LocationSearch from '../Components/LocationSearch';
 import Guest from '../Components/Guest';
 import FilterButtons from '../Components/FilterButtons';
-import PersonIcon from '@mui/icons-material/Person';
-import SettingsIcon from '@mui/icons-material/Settings';
-import LogoutIcon from '@mui/icons-material/Logout';
-import LoginIcon from '@mui/icons-material/Login';
-import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
-
 
 function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false); // State for the drawer open/close
@@ -62,63 +56,22 @@ function Header() {
           <SearchIcon className="search__icon" />
         </div>
         <div className="header__right">
-          <Avatar 
+          <Avatar
             onClick={handleDrawerToggle} // Toggle drawer when avatar is clicked
-            aria-label="User Avatar" 
+            aria-label="User Avatar"
             className="header__avatar"
           />
         </div>
       </div>
 
-      {/* Drawer (Slider Menu) */}
-      <Drawer
-        className="custom__drawer"
-        anchor="right" // You can change this to "left" if you want the drawer to slide from the left
-        open={drawerOpen}
-        onClose={handleCloseDrawer}
-      >
-        <IconButton
-          edge="end"
-          color="inherit"
-          onClick={handleCloseDrawer}  // Close the drawer when clicked
-          aria-label="close"
-          style={{ position: 'absolute' }}
-        >
-          <ChevronRightIcon /> {/* Close Icon */}
-        </IconButton>
-        <div className="drawer__content">
-        {isLoggedIn ? (
-
-            <List className="custom__list">
-              <ListItem button onClick={handleCloseDrawer} className="custom__listItem">
-              <ListItemIcon className='list__itemIcon'><PersonIcon /></ListItemIcon>
-                <ListItemText primary="Profile" className="custom__listItemText" />
-              </ListItem>
-              <ListItem button onClick={handleCloseDrawer} className="custom__listItem">
-              <ListItemIcon className='list__itemIcon'><SettingsIcon /></ListItemIcon>
-                <ListItemText primary="Settings " className="custom__listItemText" />
-              </ListItem>
-              <ListItem button onClick={handleLogout} className="custom__listItem">
-              <ListItemIcon className='list__itemIcon'><LogoutIcon /></ListItemIcon>
-                <ListItemText primary="Logout" className="custom__listItemText" />
-              </ListItem>
-            </List>
-          ) : (
-            // User is not logged in, show Login and Sign Up options
-            <List className="custom__list">
-               <ListItem button onClick={handleLogin} className="custom__listItem">
-              <ListItemIcon className='list__itemIcon'><PersonAddAltIcon /></ListItemIcon>
-                <ListItemText primary="Sign Up" className="custom__listItemText" />
-              </ListItem>
-              <ListItem button onClick={handleLogin} className="custom__listItem">
-              <ListItemIcon className='list__itemIcon'><LoginIcon /></ListItemIcon>
-                <ListItemText primary="Login" className="custom__listItemText" />
-              </ListItem>
-             
-            </List>
-                 )}
-        </div>
-      </Drawer>
+      {/* Use the DrawerComponent */}
+      <Sidebar
+        drawerOpen={drawerOpen}
+        handleDrawerToggle={handleDrawerToggle}
+        isLoggedIn={isLoggedIn}
+        handleLogin={handleLogin}
+        handleLogout={handleLogout}
+      />
     </div>
   );
 }

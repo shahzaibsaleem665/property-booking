@@ -56,6 +56,7 @@
 
 .custom__drawer .MuiDrawer-paper {
     display: flex ;
+    height: 100%;
     background-color: $light-gray;
     .MuiIconButton-root {
         margin: 10px;
@@ -64,7 +65,8 @@
             background-color: $soft-orange;
         }
     }
-.drawer__content {
+    .drawer__content {
+    height: 80%;
     width: 250px;
     display: flex;  
     margin-top: 20%;
@@ -93,6 +95,10 @@
     .list__itemIcon .MuiSvgIcon-root {
         color: black;
     }
+}
+.drawer__contentBottom {
+    display: flex;
+    height: 20%;
 }
 }
   
