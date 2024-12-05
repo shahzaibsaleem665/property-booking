@@ -11,7 +11,7 @@ import FilterButtons from '../Components/FilterButtons';
 function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false); // State for the drawer open/close
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track if the user is logged in
-
+  const [userType, setUserTpe] = useState('guest');
   // Open the drawer
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -40,6 +40,7 @@ function Header() {
         <div className="header__left">
           <img src={logo_black} alt="logo" />
         </div>
+        {(userType === 'renter' || userType === 'guest') && (
         <div className="header__middle">
           <div className="header__input">
             <LocationSearch />
@@ -55,6 +56,7 @@ function Header() {
           </div>
           <SearchIcon className="search__icon" />
         </div>
+         )}
         <div className="header__right">
           <Avatar
             onClick={handleDrawerToggle} // Toggle drawer when avatar is clicked

@@ -1,0 +1,23 @@
+.filter__types {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+        margin: auto;
+        width: 130px;
+        height: 100px;
+        border: 1px solid $secondary-text;
+        border-radius: 5px;
+        margin-top: 10px;
+        font-weight: 500;
+        &:hover {
+            cursor: pointer;
+            border: 2px solid black;
+        }
+    }
+}

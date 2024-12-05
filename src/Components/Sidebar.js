@@ -1,5 +1,5 @@
-import React from 'react';
-import { Drawer, List, ListItem, ListItemText, IconButton, ListItemIcon, Avatar } from '@mui/material';
+import React, { useState } from 'react';
+import { Drawer, IconButton, Avatar, List } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -9,7 +9,26 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-function Sidebar({ drawerOpen, handleDrawerToggle, isLoggedIn, handleLogin, handleLogout }) {
+import SideBarItem from './SideBarItem'; // Import the SideBarItem component
+import DashboardIcon from '@mui/icons-material/Dashboard';
+
+function Sidebar({ drawerOpen, handleDrawerToggle }) {
+  // Simulate the logged-in state and user role (useState for testing)
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Change to true for logged-in state
+  const [userRole, setUserRole] = useState('guest'); // Default role is 'guest'
+
+ 
+  // Simulate login (you can change the user role here for testing)
+  const handleLogin = (role) => {
+    setIsLoggedIn(true);
+    setUserRole(role); // You can set any role here for testing (e.g., 'renter', 'admin', 'host')
+  };
+
+  // Simulate logout
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUserRole('guest');
+  };
 
   return (
     <Drawer
@@ -21,59 +40,96 @@ function Sidebar({ drawerOpen, handleDrawerToggle, isLoggedIn, handleLogin, hand
       <IconButton
         edge="end"
         color="inherit"
-        onClick={handleDrawerToggle}  // Close the drawer when clicked
+        onClick={handleDrawerToggle} // Close the drawer when clicked
         aria-label="close"
         style={{ position: 'absolute' }}
       >
         <ChevronRightIcon />
       </IconButton>
+
       {isLoggedIn && (
         <div className="user__info">
-
-          {/* Update the Avatar below with Src to get picture */}
-          <Avatar  className="user__avatar" />
+          <Avatar className="user__avatar" />
           <div className="user__details">
             <p>Shahzaib Saleem</p>
             <p>Shahzaibsaleem665@gmail.com</p>
           </div>
         </div>
       )}
+
       <div className="drawer__content">
         {isLoggedIn ? (
-          <List className="custom__list" style={{marginTop: '20px'}}>
-            <ListItem button onClick={handleDrawerToggle} className="custom__listItem">
-              <ListItemIcon className="list__itemIcon"><PersonIcon /></ListItemIcon>
-              <ListItemText primary="Profile" className="custom__listItemText" />
-            </ListItem>
-            <ListItem button onClick={handleDrawerToggle} className="custom__listItem">
-              <ListItemIcon className="list__itemIcon"><SettingsIcon /></ListItemIcon>
-              <ListItemText primary="Settings" className="custom__listItemText" />
-            </ListItem>
-            <ListItem button onClick={handleLogout} className="custom__listItem">
-              <ListItemIcon className="list__itemIcon"><LogoutIcon /></ListItemIcon>
-              <ListItemText primary="Logout" className="custom__listItemText" />
-            </ListItem>
-          </List>
+          <div>
+            <List className="custom__list" style={{ marginTop: '20px' }}>
+              {/* Shared Profile and Settings for all users */}
+              <SideBarItem
+                onClick={handleDrawerToggle}
+                icon={<PersonIcon />}
+                text="Profile"
+              />
+              <SideBarItem
+                onClick={handleDrawerToggle}
+                icon={<SettingsIcon />}
+                text="Settings"
+              />
+
+              {/* Render Logout for all logged-in users */}
+              <SideBarItem
+                onClick={handleLogout}
+                icon={<LogoutIcon />}
+                text="Logout"
+              />
+
+              {/* Role-based items */}
+              {userRole === 'renter' && (
+                <SideBarItem
+                  onClick={handleDrawerToggle}
+                  icon={<DashboardIcon />}
+                  text="Renter Dashboard"
+                />
+              )}
+
+              {userRole === 'admin' && (
+                <SideBarItem
+                  onClick={handleDrawerToggle}
+                  icon={<DashboardIcon />}
+                  text="Admin Dashboard"
+                />
+              )}
+
+              {userRole === 'host' && (
+                <SideBarItem
+                  onClick={handleDrawerToggle}
+                  icon={<DashboardIcon />}
+                  text="Host Dashboard"
+                />
+              )}
+            </List>
+          </div>
         ) : (
           <List className="custom__list">
-            <ListItem button onClick={handleLogin} className="custom__listItem">
-              <ListItemIcon className="list__itemIcon"><PersonAddAltIcon /></ListItemIcon>
-              <ListItemText primary="Sign Up" className="custom__listItemText" />
-            </ListItem>
-            <ListItem button onClick={handleLogin} className="custom__listItem">
-              <ListItemIcon className="list__itemIcon"><LoginIcon /></ListItemIcon>
-              <ListItemText primary="Login" className="custom__listItemText" />
-            </ListItem>
+            <SideBarItem
+              onClick={() => handleLogin('guest')}
+              icon={<PersonAddAltIcon />}
+              text="Sign Up"
+            />
+            <SideBarItem
+              onClick={() => handleLogin('guest')}
+              icon={<LoginIcon />}
+              text="Login"
+            />
           </List>
         )}
       </div>
-      <hr/>
+
+      <hr />
+
       <div className="drawer__contentBottom">
         <p>Follow us on</p>
         <div className="social__button">
-        <FacebookIcon />
-        <InstagramIcon />
-        <LinkedInIcon />
+          <FacebookIcon />
+          <InstagramIcon />
+          <LinkedInIcon />
         </div>
       </div>
     </Drawer>
