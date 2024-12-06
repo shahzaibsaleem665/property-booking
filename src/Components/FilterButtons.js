@@ -78,9 +78,12 @@ const FilterButtons = () => {
       </button>
       {isDropdownOpen && (
         <div className="dropdown-menu">
+          <div className="dropdown__header">
+            <h3>Filters</h3>
+          </div>
             {/* Lease Types */}
             <div className="lease__type">
-  <h4>Stay Type</h4>
+  <h4>Type of Place</h4>
   <div className="lease__typeText">
     <label className="dropdown-item">
       <input
@@ -105,6 +108,7 @@ const FilterButtons = () => {
         {/* Price Range Bar */}
         <div className="price__range">
             <h4>Price Range</h4>
+            <p>Prices are shown in AUD</p>
             <div className="price-range-slider">
               <Slider
                 value={priceRange}
@@ -132,8 +136,14 @@ const FilterButtons = () => {
             toggleAmenity={toggleAmenity}  
           />
           </div>
+          <div className="dropdown__footer">
+          <button className='clear__button'>Clear All</button>
+            <button className="apply__button">Apply Filters</button>
+            
+          </div>
         </div>
       )}
+      
     </div>
   );
 };

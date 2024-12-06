@@ -2,6 +2,7 @@
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
+        margin-bottom: 10px;
     p {
         display: flex;
         justify-content: center;
@@ -11,23 +12,25 @@
         padding: 10px;
         margin: auto;
         width: auto;
-        border: 1px solid $secondary-text;
+        border: 1px solid $light-gray;
         border-radius: 30px;
         margin-top: 10px;
         font-weight: 400;
         box-sizing: border-box;
+        color: $dark-charcoal;
         &:hover {
             cursor: pointer;
-            border: 2px solid black;
+            border: 1px solid black;
         }
     }
 }
 
   
   /* Style when the amenity is selected */
-  .dropdown-item.selected , .dropdown-item:hover {
+  .dropdown-item.selected  {
     background-color: $light-gray;
-    border: 2px solid $black;
+    border: 1px solid $black;
+
   }
   
 
