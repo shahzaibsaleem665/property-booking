@@ -1,23 +1,39 @@
 .filter__types {
         display: flex;
-        align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
     p {
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        padding: 5px;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
         margin: auto;
-        width: 130px;
-        height: 100px;
+        width: auto;
         border: 1px solid $secondary-text;
-        border-radius: 5px;
+        border-radius: 30px;
         margin-top: 10px;
-        font-weight: 500;
+        font-weight: 400;
+        box-sizing: border-box;
         &:hover {
             cursor: pointer;
             border: 2px solid black;
         }
     }
 }
+
+  
+  /* Style when the amenity is selected */
+  .dropdown-item.selected , .dropdown-item:hover {
+    background-color: $light-gray;
+    border: 2px solid $black;
+  }
+  
+
+  
+  /* Optional: Style for the icon within the item */
+  .dropdown-item svg {
+    margin-right: 8px; /* Space between the icon and the text */
+  }
+  

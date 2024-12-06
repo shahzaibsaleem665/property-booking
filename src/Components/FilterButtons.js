@@ -42,7 +42,6 @@ const FilterButtons = () => {
     { name: 'Fire Extinguisher', icon: <FireExtinguisherIcon /> },
     { name: 'First Aid', icon: <MedicalServicesIcon /> },
     { name: 'Smoking Areas', icon: <SmokingRoomsIcon /> },
-    { name: 'Pool', icon: <PoolIcon /> },
   ];
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
@@ -75,7 +74,7 @@ const FilterButtons = () => {
   return (
     <div className="filter-container">
       <button className="filter-button" onClick={toggleDropdown}>
-        <TuneIcon />
+        <TuneIcon />Filters
       </button>
       {isDropdownOpen && (
         <div className="dropdown-menu">

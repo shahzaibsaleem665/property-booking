@@ -3,8 +3,7 @@ import React from 'react';
 const Amenities = ({ amenities, selectedAmenities, toggleAmenity }) => {
   return (
     <div className="filter__types">
-      
-        {amenities.map(({ name, icon }) => (
+      {amenities.map(({ name, icon }) => (
         <p
           key={name}
           className={`dropdown-item ${selectedAmenities.includes(name) ? 'selected' : ''}`}
