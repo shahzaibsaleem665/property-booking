@@ -10,11 +10,13 @@
 @import 'components/signup';
 @import 'components/sideBar';
 @import 'components/amenities';
+@import 'components/card';
 
 
 
 // Pages
 @import 'pages/header';
+@import 'pages/home';
 
 // Base Styles
 @import 'base/reset';

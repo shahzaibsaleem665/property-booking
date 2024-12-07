@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Pages/Header';
+import Home from './Pages/Home';
 import './styles/main.scss';
 import HeroSection from './Components/HeroSection';
 import SignUp from './Components/SignUp';
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/">
               <Header />
               <HeroSection />
+              <Home />
             </Route>
 
         </Switch>

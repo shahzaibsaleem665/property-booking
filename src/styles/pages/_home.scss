@@ -1,0 +1,12 @@
+.home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .home__cardContainer {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap; 
+        gap: 40px;
+        margin-top: 20px;
+    }
+}

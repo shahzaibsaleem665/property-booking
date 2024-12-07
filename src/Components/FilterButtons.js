@@ -17,21 +17,18 @@ import SmokingRoomsIcon from '@mui/icons-material/SmokingRooms';
 
 import Amenities from './Amenities';
 
-
-
-const FilterButtons = () => {
+const FilterButtons = ({ onApplyFilters }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [leaseType, setLeaseType] = useState(null);
-  const [priceRange, setPriceRange] = useState([100,2000]);
-
+  const [priceRange, setPriceRange] = useState([100, 2000]);
 
   const amenities = [
     { name: 'Wi-Fi', icon: <WifiIcon /> },
     { name: 'Gas', icon: <AcUnitIcon /> },
-    { name: 'Balcony', icon: <TvIcon /> },
     { name: 'Pool', icon: <PoolIcon /> },
     { name: 'Gym', icon: <FitnessCenterIcon /> },
+    { name: 'Balcony', icon: <TvIcon /> },
     { name: 'Air Conditioning', icon: <AcUnitIcon /> },
     { name: 'Heating', icon: <LocalLaundryServiceIcon /> },
     { name: 'Kitchen', icon: <KitchenIcon /> },
@@ -39,8 +36,8 @@ const FilterButtons = () => {
     { name: 'Parking', icon: <DirectionsCarIcon /> },
     { name: 'Pet-friendly', icon: <MonetizationOnIcon /> },
     { name: 'Work Space', icon: <DeskIcon /> },
-    { name: 'Fire Extinguisher', icon: <FireExtinguisherIcon /> },
     { name: 'First Aid', icon: <MedicalServicesIcon /> },
+    { name: 'Fire Extinguisher', icon: <FireExtinguisherIcon /> },
     { name: 'Smoking Areas', icon: <SmokingRoomsIcon /> },
   ];
 
@@ -58,6 +55,24 @@ const FilterButtons = () => {
 
   const handlePriceChange = (event, newValue) => {
     setPriceRange(newValue);
+  };
+
+  // Clear All
+  const handleClearAll = () => {
+    setLeaseType(null);
+    setSelectedAmenities([]);
+    setPriceRange([100, 2000]);
+  };
+
+  // Apply Filters
+  const handleApplyFilters = () => {
+    const filters = {
+      leaseType,
+      selectedAmenities,
+      priceRange,
+    };
+    onApplyFilters(filters); // Pass the filters to parent for further processing
+    // Need to change this above on ApplyFilters function when the data will be available
   };
 
   useEffect(() => {
@@ -81,32 +96,32 @@ const FilterButtons = () => {
           <div className="dropdown__header">
             <h3>Filters</h3>
           </div>
-            {/* Lease Types */}
-            <div className="lease__type">
-  <h4>Type of Place</h4>
-  <div className="lease__typeText">
-    <label className="dropdown-item">
-      <input
-        type="checkbox"
-        checked={leaseType === 'short term'}
-        onChange={() => selectLeaseType('short term')}
-         className='dropdown__itemChecbox'
-      />
-      Short Term
-    </label>
-    <label className="dropdown-item">
-      <input
-        type="checkbox"
-        checked={leaseType === 'long term'}
-        onChange={() => selectLeaseType('long term')}
-        className='dropdown__itemChecbox'
-      />
-      Long Term
-    </label>
-  </div>
-</div>
-        {/* Price Range Bar */}
-        <div className="price__range">
+          {/* Lease Types */}
+          <div className="lease__type">
+            <h4>Type of Place</h4>
+            <div className="lease__typeText">
+              <label className="dropdown-item">
+                <input
+                  type="checkbox"
+                  checked={leaseType === 'short term'}
+                  onChange={() => selectLeaseType('short term')}
+                  className="dropdown__itemChecbox"
+                />
+                Short Term
+              </label>
+              <label className="dropdown-item">
+                <input
+                  type="checkbox"
+                  checked={leaseType === 'long term'}
+                  onChange={() => selectLeaseType('long term')}
+                  className="dropdown__itemChecbox"
+                />
+                Long Term
+              </label>
+            </div>
+          </div>
+          {/* Price Range Bar */}
+          <div className="price__range">
             <h4>Price Range</h4>
             <p>Prices are shown in AUD</p>
             <div className="price-range-slider">
@@ -125,25 +140,27 @@ const FilterButtons = () => {
                 <span>Max: ${priceRange[1]}</span>
               </div>
             </div>
-        </div>
+          </div>
 
           {/* Filter types */}
-          <div className='filter__amenities'>
+          <div className="filter__amenities">
             <h4>Amenities</h4>
-          <Amenities
-            amenities={amenities}         
-            selectedAmenities={selectedAmenities} 
-            toggleAmenity={toggleAmenity}  
-          />
+            <Amenities
+              amenities={amenities}
+              selectedAmenities={selectedAmenities}
+              toggleAmenity={toggleAmenity}
+            />
           </div>
           <div className="dropdown__footer">
-          <button className='clear__button'>Clear All</button>
-            <button className="apply__button">Apply Filters</button>
-            
+            <button className="clear__button" onClick={handleClearAll}>
+              Clear All
+            </button>
+            <button className="apply__button" onClick={handleApplyFilters}>
+              Apply Filters
+            </button>
           </div>
         </div>
       )}
-      
     </div>
   );
 };
