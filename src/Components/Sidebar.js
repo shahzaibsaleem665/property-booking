@@ -12,6 +12,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SideBarItem from './SideBarItem'; // Import the SideBarItem component
 import DashboardIcon from '@mui/icons-material/Dashboard';
 
+import shahzaib from '../Images/shahzaib.jpeg';
+
 function Sidebar({ drawerOpen, handleDrawerToggle }) {
   // Simulate the logged-in state and user role (useState for testing)
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Change to true for logged-in state
@@ -49,7 +51,7 @@ function Sidebar({ drawerOpen, handleDrawerToggle }) {
 
       {isLoggedIn && (
         <div className="user__info">
-          <Avatar className="user__avatar" />
+          <Avatar className="user__avatar" src={shahzaib} />
           <div className="user__details">
             <p>Shahzaib Saleem</p>
             <p>Shahzaibsaleem665@gmail.com</p>

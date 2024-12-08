@@ -1,0 +1,45 @@
+.stayType {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  
+    .stayType__input {
+      @include input($white, 150px); // Assuming this is a mixin for input styling
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      position: relative; /* This ensures the dropdown is positioned relative to the input */
+    }
+  
+    .stayType__dropdown {
+      position: absolute;
+      top: calc(100% + 2px); /* Position dropdown slightly below the input */
+      left: 0;
+      width: 160px;
+      background-color: $white;
+      border-radius: 4px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+       /* Initially hide the dropdown */
+    }
+  
+    .stayType__item {
+      padding: 8px;
+      cursor: pointer;
+    border-bottom: 1px solid $light-gray;
+    font-size: 14px;
+    
+    }
+  
+    .stayType__item:hover {
+      background: $light-gray;
+    }
+  
+    /* Show the dropdown when a class like "open" is added to .stayType */
+    &.open .stayType__dropdown {
+      display: block;
+    }
+  }
+  

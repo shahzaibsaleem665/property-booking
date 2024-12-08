@@ -2,7 +2,7 @@
 .signup {
   position: relative;
   height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); // Background image URL
+  background-image: url('https://images.unsplash.com/photo-1515541369882-f47fa81d1454?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); // Background image URL
   background-size: cover;
   background-position: center;
   display: flex;
@@ -66,7 +66,7 @@
           margin-bottom: 15px;
           font-size: 1rem;
           border-radius: 5px;
-          border: 1px solid #ddd;
+          border: 1px solid $black;
           outline: none;
           width: 100%;
           
@@ -75,7 +75,7 @@
           }
           
           &:focus {
-              border-color: #ff5722; // Highlight border color on focus
+              border-color: $vibrant-orange; // Highlight border color on focus
           }
       }
 
@@ -87,7 +87,7 @@
 
       button {
         @include button($black, $vibrant-orange);
-          width: 70%;
+          width: 100%;
           
          
           span {
@@ -112,12 +112,13 @@
             
           .google__icon, .facebook__icon, .mail__icon   {
             height: 20px;
-            margin-right: 30px
+            margin-right: 20px;
           }
           .facebook__button, .email__button {
             @include button($black, $light-gray);
             margin-top: 10px;
             justify-content: flex-start;
+          
           }
           
           

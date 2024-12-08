@@ -7,6 +7,7 @@ import RangePicker from '../Components/RangePicker';
 import LocationSearch from '../Components/LocationSearch';
 import Guest from '../Components/Guest';
 import FilterButtons from '../Components/FilterButtons';
+import StayType from '../Components/StayType';
 
 function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false); // State for the drawer open/close
@@ -42,6 +43,9 @@ function Header() {
         </div>
         {(userType === 'renter' || userType === 'guest') && (
         <div className="header__middle">
+          <div className="header__stayType">
+            <StayType />
+          </div>
           <div className="header__input">
             <LocationSearch />
           </div>

@@ -97,29 +97,7 @@ const FilterButtons = ({ onApplyFilters }) => {
             <h3>Filters</h3>
           </div>
           {/* Lease Types */}
-          <div className="lease__type">
-            <h4>Type of Place</h4>
-            <div className="lease__typeText">
-              <label className="dropdown-item">
-                <input
-                  type="checkbox"
-                  checked={leaseType === 'short term'}
-                  onChange={() => selectLeaseType('short term')}
-                  className="dropdown__itemChecbox"
-                />
-                Short Term
-              </label>
-              <label className="dropdown-item">
-                <input
-                  type="checkbox"
-                  checked={leaseType === 'long term'}
-                  onChange={() => selectLeaseType('long term')}
-                  className="dropdown__itemChecbox"
-                />
-                Long Term
-              </label>
-            </div>
-          </div>
+          
           {/* Price Range Bar */}
           <div className="price__range">
             <h4>Price Range</h4>
