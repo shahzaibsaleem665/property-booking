@@ -8,11 +8,15 @@ import LocationSearch from '../Components/LocationSearch';
 import Guest from '../Components/Guest';
 import FilterButtons from '../Components/FilterButtons';
 import StayType from '../Components/StayType';
+import MoveinDate from '../Components/MoveinDate';
 
 function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false); // State for the drawer open/close
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track if the user is logged in
   const [userType, setUserTpe] = useState('guest');
+  const [stayType, setStayType] = useState(''); 
+
+
   // Open the drawer
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -35,6 +39,11 @@ function Header() {
     handleCloseDrawer();  // Close the drawer on logout
   };
 
+
+  const handleStayTypeChange = (newType) => {
+    setStayType(newType);
+  };
+
   return (
     <div className="header">
       <div className="header__content">
@@ -44,14 +53,20 @@ function Header() {
         {(userType === 'renter' || userType === 'guest') && (
         <div className="header__middle">
           <div className="header__stayType">
-            <StayType />
+          <StayType selectedStayType={stayType} onStayTypeChange={handleStayTypeChange} />
           </div>
           <div className="header__input">
             <LocationSearch />
           </div>
-          <div className="header__range">
-            <RangePicker />
-          </div>
+          {stayType === 'Vocational Search' ? (
+              <div className="header__range">
+                <RangePicker />
+              </div>
+            ) : (
+              <div className="header__range">
+                <MoveinDate />
+              </div>
+            )}
           <div className="header__guest">
             <Guest />
           </div>

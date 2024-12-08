@@ -1,0 +1,48 @@
+.moveInDate {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+
+    .date__picker {
+        position: relative;
+        .date__input {
+            @include input($white, 120px);
+            margin: 0px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    }
+
+    
+
+    .clear-icon {
+        position: absolute;
+        padding: 2px;
+        top: 50%;
+        right: 10px; /* Adjust to fit your layout */
+        transform: translateY(-50%); /* Center the icon vertically */
+        z-index: 10; /* Ensure it’s on top of the input field */
+        
+        &:hover {
+          background-color: $vibrant-orange !important; /* Customize hover effect */
+        }
+    
+        .MuiSvgIcon-root {
+          font-size: 16px; /* Adjust size of the icon */
+          color: $black; /* Icon color */
+        }
+      }
+
+      .picker__container {
+        position: absolute; /* Position it below the input */
+        top: 100%; /* Place it directly under the input field */
+        margin-left: -110px;
+        margin-top: 5px;
+        width: 100%; /* Ensure it's the same width as the input field */
+        z-index: 9999; /* Ensure the calendar is above other content */
+        background-color: $white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+      }
+}

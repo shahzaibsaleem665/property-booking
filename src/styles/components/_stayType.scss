@@ -4,13 +4,35 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-  
+  .stayType__inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
     .stayType__input {
-      @include input($white, 150px); // Assuming this is a mixin for input styling
+      @include input($white, 180px); // Assuming this is a mixin for input styling
       align-items: center;
       justify-content: center;
       margin: auto;
-      position: relative; /* This ensures the dropdown is positioned relative to the input */
+      box-sizing: border-box;
+      font-size: 14px;
+      position: relative;
+      
+    }
+    .stayType__clearIcon {
+        position: absolute;
+        padding: 2px;
+        top: 50%; /* Align icon to the right inside input */
+        right: 5px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        &:hover {
+            background-color: $vibrant-orange !important; /* Customize hover effect */
+          }
+    }
+    .MuiSvgIcon-root {
+        font-size: large;
+        color: $black; 
     }
   
     .stayType__dropdown {

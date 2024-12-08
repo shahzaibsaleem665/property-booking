@@ -7,7 +7,6 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { IconButton } from '@mui/material';
 
 function RangePicker() {
-  const history = useHistory();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [showPicker, setShowPicker] = useState(false);
