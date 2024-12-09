@@ -49,64 +49,34 @@
 
       }
     }
-    .lease__type {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: center;
-        padding: 20px;
-        .lease__typeText {
-          display: flex; /* Align checkboxes vertically */
-          gap: 10px; /* Add spacing between checkboxes */
-          justify-content: center;
+    .bedroom__count {
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
 
-        }
+      h4 {
         
-        .dropdown-item {
-          display: flex;
-          justify-content: center; /* Center the checkbox and label horizontally */
-          align-items: center; /* Vertically align the checkbox and label */
-          font-size: 12px;
-          font-weight: 500;
-          border: 1px solid $light-gray;
-          border-radius: 5px;
-          padding: 10px;
-          cursor: pointer;
-          gap: 10px; /* Space between checkbox and label */
-          text-align: center; /* Optional, ensures text is centered if multiline */
-        }
+      }
+      .bedroom__countText {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 10px;
+        p {
+         border: 1px solid $light-gray;
+         width: 60px;
+         padding: 2px;
+         border-radius: 30px;
+         text-align: center;
+          &:hover {
+            border: 1px solid black;
+            cursor: pointer;
+          }
         
-        .dropdown-item input {
-          margin: 0; /* Remove default margin */
-          width: auto;
+  
         }
-        
-        .dropdown-item:hover {
-          background-color: $light-gray;
-        }
-        .dropdown__itemChecbox {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          width: 8px;
-          height: 8px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          position: relative;
-          cursor: pointer;
-        }
-        .dropdown__itemChecbox:checked {
-          background-color: $vibrant-orange; 
-        }
-        .dropdown__itemChecbox:checked::before {
-          content: '✔'; /* Default checkmark */
-  position: absolute;
-  top: 0;
-  left: 2px;  /* Adjust to position the checkmark properly */
-  font-size: 20px;
-  color: white;  /* White color for the checkmark */
-  line-height: 20px;
-        }
+      }
     }
     .price__range {
       display: flex;

@@ -20,7 +20,6 @@ import Amenities from './Amenities';
 const FilterButtons = ({ onApplyFilters }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
-  const [leaseType, setLeaseType] = useState(null);
   const [priceRange, setPriceRange] = useState([100, 2000]);
 
   const amenities = [
@@ -49,17 +48,12 @@ const FilterButtons = ({ onApplyFilters }) => {
     );
   };
 
-  const selectLeaseType = (type) => {
-    setLeaseType((prev) => (prev === type ? null : type)); // Deselect if clicked again
-  };
-
   const handlePriceChange = (event, newValue) => {
     setPriceRange(newValue);
   };
 
   // Clear All
   const handleClearAll = () => {
-    setLeaseType(null);
     setSelectedAmenities([]);
     setPriceRange([100, 2000]);
   };
@@ -67,7 +61,6 @@ const FilterButtons = ({ onApplyFilters }) => {
   // Apply Filters
   const handleApplyFilters = () => {
     const filters = {
-      leaseType,
       selectedAmenities,
       priceRange,
     };
@@ -119,7 +112,18 @@ const FilterButtons = ({ onApplyFilters }) => {
               </div>
             </div>
           </div>
-
+<div className="bedroom__count">
+  <h4>Bedrooms</h4>
+  <div className="bedroom__countText">
+  <p>Studio</p>
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+  <p>5+</p>
+  </div>
+  
+</div>
           {/* Filter types */}
           <div className="filter__amenities">
             <h4>Amenities</h4>

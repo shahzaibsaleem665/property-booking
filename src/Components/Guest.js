@@ -52,6 +52,7 @@ function Guest() {
           }}
           style={{ cursor: number < 16 ? 'pointer' : 'not-allowed', opacity: number < 16 ? 1 : 0.5 }}
         />
+
       </div>
     </div>
   );

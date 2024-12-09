@@ -3,21 +3,21 @@ import { Calendar } from 'react-date-range';
 import ClearIcon from '@mui/icons-material/Clear';
 import { IconButton } from '@mui/material';
 
-
 function MoveinDate() {
-  const [selectedDate, setSelectedDate] = useState(''); // Default to current date
+  const [selectedDate, setSelectedDate] = useState(null); // Default to no date selected
   const [showPicker, setShowPicker] = useState(false);
 
 
-  
 
+  const today = new Date();
+  const minDate = today;
+  const maxDate = new Date(today.getFullYear(), today.getMonth() + 2, today.getDate());
 
   const handleSelect = (date) => {
     setSelectedDate(date); // Set selected date
-    console.log(date); // Log the selected date (native Date object)
+    setShowPicker(false); // Close picker after selection
   };
 
-  
   const togglePicker = () => {
     setShowPicker((prev) => !prev);
   };
@@ -26,24 +26,17 @@ function MoveinDate() {
     return new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short' }).format(date);
   };
 
-  const closePicker = () => {
+  const clearDates = () => {
+    setSelectedDate(null);
     setShowPicker(false);
   };
 
-  const clearDates = () => {
-   setSelectedDate(null);
-    closePicker();
-  };
-
-
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Close picker when clicking outside of input or picker
+      // Check if click is outside the picker container
       const pickerContainer = document.querySelector('.picker__container');
-      if (
-        pickerContainer && !pickerContainer.contains(event.target)
-      ) {
-        closePicker();
+      if (pickerContainer && !pickerContainer.contains(event.target)) {
+        setShowPicker(false);
       }
     };
 
@@ -57,34 +50,36 @@ function MoveinDate() {
   }, []);
 
   return (
-    <div className='moveInDate' >
-        <div className="date__picker" onClick={togglePicker} >
-            <input type="text"
+    <div className="moveInDate">
+      <div className="date__picker">
+        <input
+          type="text"
           className="date__input"
           readOnly
           value={selectedDate ? `${formatDate(selectedDate)}` : ''}
-          onClick={(e) => { e.stopPropagation(); togglePicker(); }}
-          placeholder="Move In Date" />
- {selectedDate &&(
-          <IconButton className="clear-icon">
-          <ClearIcon  onClick={clearDates} />
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent bubbling to document click
+            togglePicker();
+          }}
+          placeholder="Move In Date"
+        />
+        {selectedDate && (
+          <IconButton className="clear-icon" onClick={clearDates}>
+            <ClearIcon />
           </IconButton>
         )}
-
-{showPicker && (
-        <div className="picker__container">
-          <Calendar
-            date={selectedDate} // Display the selected date
-            onChange={handleSelect} // Handle date selection
-            range={{ startDate: selectedDate, endDate: selectedDate }} // Restrict range to single date
-            showDateDisplay={false}
-            rangeColors={["#FFAC1C"]}
-          />
-          
-        </div>
-      )}
-   
-    </div>
+        {showPicker && (
+          <div className="picker__container">
+            <Calendar
+              date={selectedDate} // Display the selected date
+              onChange={handleSelect} // Handle date selection
+              showDateDisplay={false}
+              minDate={minDate}
+              maxDate = {maxDate}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
