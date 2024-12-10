@@ -3,7 +3,8 @@ import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import { Visibility, VisibilityOff } from '@mui/icons-material';  // Material UI Icons
 import google_icon from '../Images/google_icon.png';
 import facebook_icon from '../Images/facebook_icon.png';
-import mail_icon from '../Images/mail_icon.png';
+import mail_icon from '../Images/mail_icon.png'
+
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -11,11 +12,15 @@ function SignUp() {
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+
+
+//   // Handle form submission
+ const handleSubmit = async (e) => {
+
+
     e.preventDefault();
-    if (email.trim() === '') {
-      setError('Email is required');
+     if (email.trim() === '') {
+     setError('Email is required');
     } else {
       setError('');
       // Handle account creation logic
@@ -71,7 +76,7 @@ function SignUp() {
 
             {error && <p className="error">{error}</p>}
 
-            <button type="submit" className="signup__btn">
+            <button onClick={handleSubmit} type="submit" className="signup__btn">
               <span>Create Account</span>
             </button>
           </form>

@@ -1,14 +1,12 @@
-import React from 'react';
+import React from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import { useState } from 'react';
 
 
-// propertyType is a check which will be coming from database to verify the type of the property e.g. For Lease, For Sale, For Vacation
-
-function Card({ src, title, description, rating, dates, price, isFeatured, buttonText  }) {
-
+function RentalCard({src, title, description, rating, dates, price, isFeatured, buttonText }) {
+   
     const [isLiked, setIsLiked] = useState(false);
 
     // Toggle the heart icon state (like/dislike)
@@ -19,31 +17,31 @@ function Card({ src, title, description, rating, dates, price, isFeatured, butto
    
 
   return (
-    <div className='card'>
-      <div className="card__imageContainer">
-        <img src={src} alt="" className="card__image" />
+    <div className='rentalCard'>
+      <div className="rentalCard__imageContainer">
+        <img src={src} alt="" className="rentalCard__image" />
         {/* Dynamic Button */}
         {isFeatured && (
-          <div className="card__buttonContainer">
-            <p className="card__buttonText">{buttonText}</p> {/* Dynamically set button text */}
+          <div className="reantalCard__buttonContainer">
+            <p className="rentalCard__buttonText">{buttonText}</p> {/* Dynamically set button text */}
           </div>
         )}
       </div>
 
-      <div className="card__info">
-        <div className="card__infoTitle">
+      <div className="rentalCard__info">
+        <div className="rentalCard__infoTitle">
           <h4>{title}</h4>
           <p><StarRateIcon />{rating}</p>
         </div>
-        <div className="card__infoDesc">
-            <div className="card__infoText">
+        <div className="rentalCard__infoDesc">
+            <div className="rentalCard__infoText">
             <p>{description}</p>
           <p>{dates}</p>
-          <p className="card__price">
+          <p className="rentalCard__price">
             {price} AUD
           </p>
             </div>
-          <div  className={`card__infoHeart ${isLiked ? 'liked' : ''}`} 
+          <div  className={`rentalCard__infoHeart ${isLiked ? 'liked' : ''}`} 
           onClick={toggleLike} 
         >
           {isLiked ? (
@@ -58,4 +56,4 @@ function Card({ src, title, description, rating, dates, price, isFeatured, butto
   );
 }
 
-export default Card;
+export default RentalCard
