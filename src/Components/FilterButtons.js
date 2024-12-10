@@ -17,10 +17,11 @@ import SmokingRoomsIcon from '@mui/icons-material/SmokingRooms';
 
 import Amenities from './Amenities';
 
-const FilterButtons = ({ onApplyFilters }) => {
+const FilterButtons = ({ onApplyFilters, stayType}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [priceRange, setPriceRange] = useState([100, 2000]);
+
 
   const amenities = [
     { name: 'Wi-Fi', icon: <WifiIcon /> },
@@ -111,19 +112,20 @@ const FilterButtons = ({ onApplyFilters }) => {
                 <span>Max: ${priceRange[1]}</span>
               </div>
             </div>
-          </div>
-<div className="bedroom__count">
-  <h4>Bedrooms</h4>
-  <div className="bedroom__countText">
-  <p>Studio</p>
-  <p>1</p>
-  <p>2</p>
-  <p>3</p>
-  <p>4</p>
-  <p>5+</p>
-  </div>
-  
-</div>
+          </div>{stayType === 'Purchase' &&  stayType === 'Lease'(
+            <div className="bedroom__count">
+              <h4>Bedrooms</h4>
+              <div className="bedroom__countText">
+                <p>Studio</p>
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5+</p>
+              </div>
+            </div>
+          )}
+
           {/* Filter types */}
           <div className="filter__amenities">
             <h4>Amenities</h4>

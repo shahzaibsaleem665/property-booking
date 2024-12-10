@@ -46,17 +46,17 @@ function Header() {
             {/* Conditional rendering of header componenets */}
             {stayType && (
               <div className="header__range">
-                {stayType === 'Vocational Search' ? <RangePicker /> : <MoveinDate />}
+                {stayType === 'Looking for Holiday?' ? <RangePicker /> : <MoveinDate />}
               </div>
             )}
             {stayType && (
               <div className="header__guest">
-              {stayType === 'Vocational Search' ? <Guest /> : ''}
+              {stayType === 'Looking for Holiday?' ? <Guest /> : ''}
             </div>
             )}
             
             <div className="header__filter">
-              <FilterButtons />
+              <FilterButtons  stayType={stayType}  />
             </div>
             <SearchIcon className="search__icon" />
           </div>
