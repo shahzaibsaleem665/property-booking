@@ -21,7 +21,7 @@ const FilterButtons = ({ onApplyFilters, stayType}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [priceRange, setPriceRange] = useState([100, 2000]);
-
+  const [stay, setStay] = useState('');
 
   const amenities = [
     { name: 'Wi-Fi', icon: <WifiIcon /> },
@@ -52,11 +52,15 @@ const FilterButtons = ({ onApplyFilters, stayType}) => {
   const handlePriceChange = (event, newValue) => {
     setPriceRange(newValue);
   };
+  const handleStay = (bedroom) => {
+    setStay((prevStay) => (prevStay === bedroom ? '' : bedroom))
+  };
 
   // Clear All
   const handleClearAll = () => {
     setSelectedAmenities([]);
     setPriceRange([100, 2000]);
+    setStay('');
   };
 
   // Apply Filters
@@ -64,6 +68,7 @@ const FilterButtons = ({ onApplyFilters, stayType}) => {
     const filters = {
       selectedAmenities,
       priceRange,
+      stay,
     };
     onApplyFilters(filters); // Pass the filters to parent for further processing
     // Need to change this above on ApplyFilters function when the data will be available
@@ -112,16 +117,21 @@ const FilterButtons = ({ onApplyFilters, stayType}) => {
                 <span>Max: ${priceRange[1]}</span>
               </div>
             </div>
-          </div>{stayType === 'Purchase' &&  stayType === 'Lease'(
+          </div>
+          {(stayType !== 'Place for Holiday?' && stayType !== '') && (
             <div className="bedroom__count">
               <h4>Bedrooms</h4>
               <div className="bedroom__countText">
-                <p>Studio</p>
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5+</p>
+                {/* Each bedroom option is clickable */}
+                {['Studio', '1', '2', '3', '4', '5+'].map((bedroom) => (
+                  <p
+                    key={bedroom}
+                    onClick={() => handleStay(bedroom)} // When clicked, set the bedroom
+                    className={stay === bedroom ? 'selected-bedroom' : ''}
+                  >
+                    {bedroom}
+                  </p>
+                ))}
               </div>
             </div>
           )}

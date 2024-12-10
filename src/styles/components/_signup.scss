@@ -18,7 +18,7 @@
       background: rgba(0, 0, 0, 0.3); // Dark transparent overlay
       z-index: -1; // Keep overlay behind content
   }
-
+ 
   .signup__content {
       position: relative;
       background-color: rgba(255, 255, 255, 0.9); // Slightly opaque background for better contrast
@@ -85,14 +85,13 @@
           margin-top: 5px;
       }
 
-      button {
+      .signup__btn {
         @include button($black, $vibrant-orange);
           width: 100%;
-          
+         span {
+          font-weight: bold;
+         }
          
-          span {
-              font-weight: bold;
-          }
       }
 
       .social__login {
@@ -105,21 +104,18 @@
               font-size: 1rem;
               color: #666;
           }
-          .google__button {
+          .google__button,.facebook__button, .email__button {
             @include button($black, $white);
+            width: 100%;
             justify-content: flex-start;
+            margin-top: 10px;
           }          
             
           .google__icon, .facebook__icon, .mail__icon   {
             height: 20px;
             margin-right: 20px;
           }
-          .facebook__button, .email__button {
-            @include button($black, $light-gray);
-            margin-top: 10px;
-            justify-content: flex-start;
-          
-          }
+         
           
           
     

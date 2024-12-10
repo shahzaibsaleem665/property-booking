@@ -10,7 +10,7 @@
     align-items: center;
   }
     .stayType__input {
-      @include input($white, 180px); // Assuming this is a mixin for input styling
+      @include input($white, 170px); // Assuming this is a mixin for input styling
       align-items: center;
       justify-content: center;
       margin: auto;

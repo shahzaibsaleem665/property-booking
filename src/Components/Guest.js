@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import PeopleIcon from '@mui/icons-material/People';
 
 function Guest() {
   const [number, setNumber] = useState(2);

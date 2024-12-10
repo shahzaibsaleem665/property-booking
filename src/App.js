@@ -5,33 +5,29 @@ import './styles/main.scss';
 import HeroSection from './Components/HeroSection';
 import SignUp from './Components/SignUp';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-} from "react-router-dom";
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+
 function App() {
   return (
     <div className="app">
+      <BrowserRouter>
+        <Routes> {/* Updated to Routes (v6) */}
+          <Route path='/register' element={
+            <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+              <SignUp />
+            </GoogleOAuthProvider>
+          } />
 
-      <Router>
-        <Switch>
-          <Route path='/register' >
-          <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
-      <SignUp />
-    </GoogleOAuthProvider>
-          </Route>
-          <Route exact path="/">
+          <Route path="/" element={(
+            <>
               <Header />
               <HeroSection />
               <Home />
-            </Route>
+            </>
+          )} />
 
-        </Switch>
-      </Router>
-      
-      
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

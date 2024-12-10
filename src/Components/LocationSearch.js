@@ -37,6 +37,28 @@ const LocationSearch = () => {
       setAddress(selectedAddress);
       setInputClicked(false); // Reset input clicked state after selecting an address
       const results = await geocodeByAddress(selectedAddress);
+
+      // Extract the address and city (removing country and street)
+      const addressComponents = results[0].address_components;
+      let city = '';
+      let state = '';
+
+      addressComponents.forEach(component => {
+        if (component.types.includes('locality')) {
+          city = component.long_name; // Get city/suburb name
+        }
+        if (component.types.includes('administrative_area_level_1')) {
+          state = component.long_name; // Get state abbreviation (e.g., VIC, NSW)
+        }
+      });
+
+      // Combine city and state (city, state)
+      if (city && state) {
+        setAddress(`${city}, ${state}`); // Show city and state in the input field
+      } else {
+        setAddress(''); // Reset if city or state is not found
+      }
+
       const latLng = await getLatLng(results[0]);
       console.log('Selected Address:', selectedAddress);
       console.log('Coordinates:', latLng);
@@ -49,6 +71,7 @@ const LocationSearch = () => {
   if (!process.env.REACT_APP_location_API) {
     console.error('Google Maps API key is not set!');
   }
+
 
   return (
     <div>

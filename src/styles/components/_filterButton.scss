@@ -54,9 +54,7 @@
       flex-direction: column;
       padding-left: 20px;
 
-      h4 {
-        
-      }
+      
       .bedroom__countText {
         display: flex;
         align-items: center;
@@ -72,9 +70,12 @@
           &:hover {
             border: 1px solid black;
             cursor: pointer;
-          }
-        
-  
+          }    
+        }
+        .selected-bedroom {
+          border: 1px solid $black;
+          background-color: $light-gray; /* Change background color to highlight the selected option */
+          
         }
       }
     }

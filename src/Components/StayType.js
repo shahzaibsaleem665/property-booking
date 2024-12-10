@@ -69,11 +69,11 @@ function StayType({ selectedStayType, onStayTypeChange }) {
           <div onClick={() => handleSelect("Place for Holiday?")} className="stayType__item">
             Place for Holiday?
           </div>
-          <div onClick={() => handleSelect("Lease")} className="stayType__item">
-            Lease
+          <div onClick={() => handleSelect("Looking to Lease?")} className="stayType__item">
+            Looking to Lease?
           </div>
-          <div onClick={() => handleSelect("Purchase")} className="stayType__item">
-            Purchase
+          <div onClick={() => handleSelect("Looking to Buy?")} className="stayType__item">
+            Looking to Buy?
           </div>
         </div>
       )}

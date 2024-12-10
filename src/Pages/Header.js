@@ -45,9 +45,13 @@ function Header() {
 
             {/* Conditional rendering of header componenets */}
             {stayType && (
-              <div className="header__range">
-                {stayType === 'Looking for Holiday?' ? <RangePicker /> : <MoveinDate />}
-              </div>
+             <div className="header__range">
+             {stayType === 'Looking for Holiday?' ? (
+               <RangePicker />
+             ) : stayType === 'Looking to Lease?' ? (
+               <MoveinDate />
+             ) : null}
+           </div>
             )}
             {stayType && (
               <div className="header__guest">

@@ -1,16 +1,18 @@
 import React from 'react'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import logo_light from '../Images/logo_light.svg';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 function HeroSection() {
 
+  const navigate = useNavigate();
 
-  const history = useHistory(); // useHistory for React Router v5
+  
 
   const handleClick = (event) => {
     event.preventDefault();
-    history.push('/register'); // Programmatically navigate to the /register route
+    navigate('/register'); // Programmatically navigate to the /register route
   }; 
 
 
