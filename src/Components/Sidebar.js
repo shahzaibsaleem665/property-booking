@@ -13,17 +13,19 @@ import SideBarItem from './SideBarItem'; // Import the SideBarItem component
 import DashboardIcon from '@mui/icons-material/Dashboard';
 
 import shahzaib from '../Images/shahzaib.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 function Sidebar({ drawerOpen, handleDrawerToggle }) {
   // Simulate the logged-in state and user role (useState for testing)
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Change to true for logged-in state
   const [userRole, setUserRole] = useState('guest'); // Default role is 'guest'
 
- 
+ const navigate = useNavigate();
   // Simulate login (you can change the user role here for testing)
   const handleLogin = (role) => {
     setIsLoggedIn(true);
-    setUserRole(role); // You can set any role here for testing (e.g., 'renter', 'admin', 'host')
+    setUserRole(role); 
+  
   };
 
   // Simulate logout
@@ -111,12 +113,12 @@ function Sidebar({ drawerOpen, handleDrawerToggle }) {
         ) : (
           <List className="custom__list">
             <SideBarItem
-              onClick={() => handleLogin('guest')}
+              onClick={(e) => navigate('/register')}
               icon={<PersonAddAltIcon />}
               text="Sign Up"
             />
             <SideBarItem
-              onClick={() => handleLogin('guest')}
+              onClick={(e) => navigate('/login')}
               icon={<LoginIcon />}
               text="Login"
             />

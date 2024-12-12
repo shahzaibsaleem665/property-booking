@@ -5,7 +5,10 @@
     align-items: center;
     justify-content: center;
     background-color: $white;
-    
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick it to the top of the page */
+    z-index: 1000; /* Ensures it stays above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 .header__content { 
     display: flex;
@@ -19,6 +22,9 @@
     img {
         width: 130px;
         height: 60px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     
 }

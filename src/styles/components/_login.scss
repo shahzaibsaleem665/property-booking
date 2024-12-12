@@ -1,0 +1,154 @@
+
+.login {
+    display: flex;
+    justify-content: right;
+    height: 100%;
+
+   .login__left {
+    position: relative;
+    width: 70%;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1485819196298-11222a657b31?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); //Background image URL
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+   
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); // Dark transparent overlay
+        z-index: -1; // Keep overlay behind content
+    }
+    
+   }
+    .login__content {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.9); // Slightly opaque background for better contrast
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height: 100%;
+        .back__toHome {
+          color: $primary-text;
+          margin-left: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+         width: 150px;
+         border: 1px solid black;
+         border-radius: 10px;
+         font-size: 14px;
+         .MuiSvgIcon-root {
+          font-size: x-large;
+         }
+         &:hover {
+          cursor: pointer;
+          background-color: $light-gray;
+         }
+        }
+        
+        .password-input-container {
+          position: relative;
+          width: 100%;
+          
+          .password-eye {
+            position: absolute;
+            top: 45%;
+            right: 60px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 1;  // Ensure the icon is above the input field
+          }
+        }
+        .login__inputs {
+            margin-top: 20%;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+          padding: 20px;
+          h2{
+            margin-bottom: 10px;
+            font-size: 2rem;
+            color: $primary-text;
+        }
+        p {
+          font-size: 18px;
+          color: gray;
+          margin-bottom: 10%;
+        }
+  
+            input {
+              padding: 8px;
+              margin-bottom: 15px;
+              font-size: 1rem;
+              border-radius: 10px;
+              border: 1px solid $black;
+              outline: none;
+              width: 90%;
+              height: 50px;
+              text-indent: 10px;
+              font-size: 16px;
+              &::placeholder {
+                  color: #aaa;
+                  font-size: 16px;
+              }
+              
+              &:focus {
+                  border-color: $vibrant-orange; // Highlight border color on focus
+              }
+          }
+    
+          .error {
+              color: red;
+              font-size: 12px;
+              margin-top: 5px;
+              font-weight: bold
+          }
+    
+          .login__btn {
+            @include button($black, $vibrant-orange);
+              width: 90%;
+              border-radius: 10px;
+              font-weight: bold;
+              font-size: 16px;
+              height: 50px;
+              margin: 0px;
+             span {
+              font-weight: bold;
+             }
+             &:hover {
+                border: 2px solid $black;
+             }
+             
+          }
+        }
+  .forget__pass { 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 90%;
+    p {
+    font-size: 14px;
+    color: $black;
+    font-weight: 500;
+    text-decoration: underline;
+    &:hover {
+        cursor: pointer;
+        color: $vibrant-orange;
+    }
+    }
+  }
+      
+  
+       
+  
+    }
+  }
+  
+  

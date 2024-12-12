@@ -9,8 +9,10 @@ import Guest from '../Components/Guest';
 import FilterButtons from '../Components/FilterButtons';
 import StayType from '../Components/StayType';
 import MoveinDate from '../Components/MoveinDate';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false); 
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [userType, setUserType] = useState('guest');
@@ -32,7 +34,7 @@ function Header() {
     <div className="header">
       <div className="header__content">
         <div className="header__left">
-          <img src={logo_black} alt="logo" />
+          <img src={logo_black} alt="logo" onClick={(e) => navigate('/')} />
         </div>
         {(userType === 'renter' || userType === 'guest') && (
           <div className="header__middle">
@@ -55,7 +57,7 @@ function Header() {
             )}
             {stayType && (
               <div className="header__guest">
-              {stayType === 'Looking for Holiday?' ? <Guest /> : ''}
+              {stayType === 'Place for Holiday?' ? <Guest /> : ''}
             </div>
             )}
             

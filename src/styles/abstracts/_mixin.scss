@@ -4,7 +4,7 @@
     color: $color;
     background-color: $bg-color;
     padding: $padding;
-    border: 2px solid $color;
+    border: 1px solid $color;
     border-radius: $radius;
     font-size: 14px;
     font-weight: 500;
@@ -17,13 +17,9 @@
   
     &:hover {
       background-color: $bg-color;
-      transform: scale(1.05);
+      
     }
 
-    &:active {
-        background-color: ($light-gray, 15%);
-        transform: scale(0.98);
-    }
   }
 
   @mixin input ( $color, $width: 300px) {

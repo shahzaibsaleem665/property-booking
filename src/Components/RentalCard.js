@@ -5,7 +5,7 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import { useState } from 'react';
 
 
-function RentalCard({src, title, description, rating, dates, price, isFeatured, buttonText }) {
+function RentalCard({image, headingTitle, description, availability, price, isFeatured, buttonText }) {
    
     const [isLiked, setIsLiked] = useState(false);
 
@@ -19,10 +19,10 @@ function RentalCard({src, title, description, rating, dates, price, isFeatured, 
   return (
     <div className='rentalCard'>
       <div className="rentalCard__imageContainer">
-        <img src={src} alt="" className="rentalCard__image" />
+        <img src={image} alt="" className="rentalCard__image" />
         {/* Dynamic Button */}
         {isFeatured && (
-          <div className="reantalCard__buttonContainer">
+          <div className="rentalCard__buttonContainer">
             <p className="rentalCard__buttonText">{buttonText}</p> {/* Dynamically set button text */}
           </div>
         )}
@@ -30,13 +30,12 @@ function RentalCard({src, title, description, rating, dates, price, isFeatured, 
 
       <div className="rentalCard__info">
         <div className="rentalCard__infoTitle">
-          <h4>{title}</h4>
-          <p><StarRateIcon />{rating}</p>
+          <h4>{headingTitle}</h4>
         </div>
         <div className="rentalCard__infoDesc">
             <div className="rentalCard__infoText">
             <p>{description}</p>
-          <p>{dates}</p>
+          <p>{availability}</p>
           <p className="rentalCard__price">
             {price} AUD
           </p>

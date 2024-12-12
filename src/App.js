@@ -6,6 +6,8 @@ import HeroSection from './Components/HeroSection';
 import SignUp from './Components/SignUp';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import Login from './Components/Login';
+
 
 function App() {
   return (
@@ -15,6 +17,11 @@ function App() {
           <Route path='/register' element={
             <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
               <SignUp />
+            </GoogleOAuthProvider>
+          } />
+           <Route path='/login' element={
+            <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+              <Login />
             </GoogleOAuthProvider>
           } />
 
