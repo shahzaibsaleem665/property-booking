@@ -1,7 +1,7 @@
 .rentalCard {
     flex: 1 1 calc(33.33% - 16px); /* Each card takes 1/3 of the width minus gap space */
-    max-width: 300px; /* Ensure cards do not exceed 300px in width */
-    min-width: 250px; /* Prevent the cards from getting too small */
+    max-width: 320px; /* Ensure cards do not exceed 300px in width */
+    min-width: 300px; /* Prevent the cards from getting too small */
     background-color: $white;
     border-radius: 8px;
     overflow: hidden;
@@ -9,6 +9,7 @@
     box-sizing: border-box;
     margin-left: 8px;
     margin: 5px;
+
   }
   
   .rentalCard__imageContainer {
@@ -20,7 +21,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
   }
   
   
@@ -40,7 +40,7 @@
     font-weight: 500;
     text-align: center;
     font-size: 14px;
-    color: $dark-charcoal; /* Or any color you prefer */
+    color: $dark-charcoal ; /* Or any color you prefer */
     
   }
 }
@@ -49,40 +49,78 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2px;
+    .rentalCard__infoTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $vibrant-orange;
+      height: 50px;
+      .MuiAvatar-root {
+        margin: 2px;
+      }
+      
+      .rentalCard__infoTopDetails {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 180px;
+      }
+      p {
+        margin: auto;
+        color: $black;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 500;
+      }
+    }
+
+
+
     .rentalCard__infoTitle {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        height: 30px;
-        h4 {
-            margin: 0px;
+        margin-left: 2px;
+        p { 
+          text-align: center;
+          justify-self: center;
+          display: flex;
+          margin: 5px;;
+          font-weight: 550;
+          color: $black;
+          .MuiSvgIcon-root {
+            margin-right: 5px;
+            color: $primary-text !important;
+            font-size: x-large;
+          }
         }
-        p {
-            display: flex;
-            align-items: center;
-            margin: 0px;
-            .MuiSvgIcon-root {
-                font-size: large;
-                margin-right: 5px;
-                color: $vibrant-orange;
-            }
-        }
+                
     }
     .rentalCard__infoDesc {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
+        
         .rentalCard__infoText {
             display: flex;
             flex-direction: column;
+            margin: 5px;
+            padding: 5px;
+            margin-top: 0px;
+            .address {
+              color: $black;
+              font-weight: 500;
+              max-width: 170px;
+            }
              p {
-                margin: 0;
+                margin: 0px;
+                color: $secondary-text;
+                font-size: 16px;
 
             }
             .rentalCard__price {
-                font-weight: bold;
+                font-weight: 500;
                 color: $black;
-                text-decoration: underline;
                 margin-top: 5px;
             }
         }
@@ -90,6 +128,7 @@
             display: flex;
             align-items: flex-end;
             cursor: pointer;
+            
              .icon__clicked {
                 color: $soft-orange;
              }
@@ -97,6 +136,9 @@
             .not__filled {
                 color: black; /* Light grey color for unfilled heart */
               }
+              .MuiSvgIcon-root {
+                margin: 10px;
+                }
         }
     }
 }

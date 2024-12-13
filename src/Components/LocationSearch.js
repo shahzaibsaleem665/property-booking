@@ -67,10 +67,6 @@ const LocationSearch = () => {
     }
   };
 
-  // Ensure the API key is available
-  if (!process.env.REACT_APP_location_API) {
-    console.error('Google Maps API key is not set!');
-  }
 
 
   return (
