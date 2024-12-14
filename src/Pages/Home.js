@@ -45,19 +45,21 @@ function Home() {
       <Carousel
         responsive={responsive}
         swipeable={false}
-        draggable={true}
+        draggable={false}
         showDots={false}
         infinite={false}
         autoPlay={false}
         keyBoardControl={true}
+        partialVisbile={false}
         customTransition="transform 0.5s ease"
         transitionDuration={500}
         itemClass="carousel-item" // Add this line to apply a custom class to each carousel item
       
       >
         {properties.map((property) => (
-          <div key={property.id}>
-            <RentalCard
+          <div key={property.id} >
+               
+            <RentalCard 
               image={property.image}
               location={property.location}
               agentUrl={shahzaib}

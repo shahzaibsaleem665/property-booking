@@ -16,20 +16,17 @@
         margin: auto;
         padding: 0px;
         position: relative;  
+     
         background-color: pink !important;   /* Ensure relative positioning for correct clipping */
       }
-      
       .react-multi-carousel-track {
-       gap: 5px;
         
-      }
+      } 
+      .react-multi-carousel-item {    
+       
+}
       
-      /* Optionally, if needed, apply margin on each item */
-      .react-multi-carousel-item {
-        margin-right: 5px; /* Reduce gap between items */
-        flex-shrink: 0; /* Prevent items from shrinking */
-        padding: 0px;
-      }
+    
       
       
  
