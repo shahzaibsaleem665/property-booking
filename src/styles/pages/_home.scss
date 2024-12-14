@@ -2,11 +2,35 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    .home__cardContainer {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap; 
-        gap: 40px;
+    align-items: left;
+    flex-direction: column;
+    padding-top: 10px;
+    h2 {
+        padding-left: 100px;
         margin-top: 20px;
+        margin-bottom: 0px;
     }
+    .react-multi-carousel-list {
+        max-width: 90%; 
+        overflow: hidden; 
+        margin: auto;
+        padding: 0px;
+        position: relative;  
+        background-color: pink !important;   /* Ensure relative positioning for correct clipping */
+      }
+      
+      .react-multi-carousel-track {
+       gap: 5px;
+        
+      }
+      
+      /* Optionally, if needed, apply margin on each item */
+      .react-multi-carousel-item {
+        margin-right: 5px; /* Reduce gap between items */
+        flex-shrink: 0; /* Prevent items from shrinking */
+        padding: 0px;
+      }
+      
+      
+ 
 }
