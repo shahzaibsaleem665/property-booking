@@ -6,9 +6,20 @@ import { Avatar } from '@mui/material';
 import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
-
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function RentalCard({image, agentUrl, agencyName, agentName, beds, bathrooms, parking, type, location, inspection, price, isFeatured, buttonText }) {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+  }
    
     const [isLiked, setIsLiked] = useState(false);
 
@@ -17,12 +28,25 @@ function RentalCard({image, agentUrl, agencyName, agentName, beds, bathrooms, pa
       setIsLiked((prev) => !prev); // Toggle between true and false
     };
   
-   
+    const Images = [
+      { id: 1,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPYsppJOTStr3f_26NY7HGXa_M6XXBSM9mfQ&s"},
+      { id: 2,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzz5rDiBcRQNwY1_xasqAbHjLqjx0W6Sa0cw&s"},
+      { id: 3,  image: "https://api.photon.aremedia.net.au/wp-content/uploads/sites/2/umb-media/25922/resort-style-1980s-home-renovation-living-room-vaulted-a-frame-ceiling.jpg?crop=0px%2C857px%2C1467px%2C825px&resize=720%2C405"},
+      { id: 4,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQji2pHswi_mAhHjWZ7N6a9w-6QR52IUSXVsg&s"},
+      { id: 5,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZLAX_AcLzCPJKXODX7m4qaA7FBalaQuEV1g&s"},
+      
+    ];
 
   return (
     <div className='rentalCard'>
       <div className="rentalCard__imageContainer">
-        <img src={image} alt="" className="rentalCard__image" />
+        <Slider {...settings}>
+        {Images.map((property) => (
+          <div key={property.id} className='images__slider' >
+        <img src={property.image} alt="" className="rentalCard__image" />
+        </div>
+        ))}
+        </Slider>
         {/* Dynamic Button */}
         {isFeatured && (
           <div className="rentalCard__buttonContainer">

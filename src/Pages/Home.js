@@ -13,7 +13,7 @@ function Home() {
 
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
@@ -29,32 +29,6 @@ function Home() {
         <ArrowForwardIcon style={{ fontSize: '40px', color: 'white', backgroundColor: 'black', marginLeft: '-15px',borderRadius: '30px', padding: '2px' }} />
       </div>
     ),
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
   };
   const properties = [
     { id: 1, location: "123 Main St, Granville, NSW", image: "https://coralhomes.com.au/wp-content/uploads/Atlanta-Series-1190x680.png", price: 2500, beds: 3, type: 'House' },
@@ -71,10 +45,8 @@ function Home() {
   return (
     <div className='home'>
       {/* To check width and sort resposniveness */}
-      
-      <h2>Featured Properties{getWindowWidth} px</h2>  
+      <h2>Featured Properties</h2>  
 
-      
       <div className="home__cardContainer">
       <Slider {...settings}>
         {properties.map((property) => (

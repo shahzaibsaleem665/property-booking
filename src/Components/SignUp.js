@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 function SignUp() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // General error
@@ -28,6 +29,7 @@ function SignUp() {
     setEmailError('');
     setPhoneError('');
     setPasswordError('');
+    setName('');
 
     // Email validation: Ensure it's not empty
     if (email.trim() === '') {
@@ -78,6 +80,14 @@ function SignUp() {
             <p>Sign up using the form below</p>
 
             {/* Email Input */}
+            <input
+              type="text"
+              id="fullName"
+              placeholder="Enter your full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
             <input
               type="email"
               id="email"
