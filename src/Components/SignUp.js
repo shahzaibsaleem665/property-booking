@@ -74,9 +74,9 @@ function SignUp() {
           {/* Empty div for content */}
         </div>
         <div className="signup__content">
-          <p className='back__toHome' onClick={(e) => navigate('/') }><KeyboardBackspaceIcon />Back to Home</p>
+          <p className='back__toHome' onClick={(e) => navigate('/') }><KeyboardBackspaceIcon />Back to home</p>
           <div className="signup__inputs">
-            <h2>Join us Today</h2>
+            <h2>Join us today</h2>
             <p>Sign up using the form below</p>
 
             {/* Email Input */}

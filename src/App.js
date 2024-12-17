@@ -7,6 +7,7 @@ import SignUp from './Components/SignUp';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Login from './Components/Login';
+import Property from './Pages/Property';
 
 
 function App() {
@@ -24,6 +25,14 @@ function App() {
               <Login />
             </GoogleOAuthProvider>
           } />
+
+            <Route path='/property' element={(         
+            <>
+              <Property />
+            </>
+          )}
+          
+          />  
 
           <Route path="/" element={(
             <>

@@ -3,6 +3,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 // propertyType is a check which will be coming from database to verify the type of the property e.g. For Lease, For Sale, For Vacation
@@ -10,6 +11,7 @@ import { useState } from 'react';
 function Card({ src, title, description, rating, dates, price, isFeatured, buttonText  }) {
 
     const [isLiked, setIsLiked] = useState(false);
+    const navigate = useNavigate();
 
     // Toggle the heart icon state (like/dislike)
     const toggleLike = () => {
@@ -19,7 +21,7 @@ function Card({ src, title, description, rating, dates, price, isFeatured, butto
    
 
   return (
-    <div className='card'>
+    <div className='card' onClick={(e) => navigate('/property')}>
       <div className="card__imageContainer">
         <img src={src} alt="" className="card__image" />
         {/* Dynamic Button */}

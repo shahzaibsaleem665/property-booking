@@ -30,7 +30,7 @@ const handleTogglePassword = () => {
 
         </div>
         <div className="login__content">
-        <p className='back__toHome' onClick={(e) => navigate('/') }><KeyboardBackspaceIcon />Back to Home</p>
+        <p className='back__toHome' onClick={(e) => navigate('/') }><KeyboardBackspaceIcon />Back to home</p>
         <div className="login__inputs">
         <h2>Welcome to Homyra!</h2>
         <p>Log in using the form below</p>
@@ -63,7 +63,7 @@ const handleTogglePassword = () => {
               </span>
             </div>
             <button onClick={handleSubmit} type="submit" className="login__btn">
-              Create Account
+              Log in
             </button>
             <div className='forget__pass'>
             <p>Forgot Password?</p>

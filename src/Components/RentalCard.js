@@ -9,8 +9,12 @@ import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFi
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from 'react-router-dom';
 
-function RentalCard({image, agentUrl, agencyName, agentName, beds, bathrooms, parking, type, location, inspection, price, isFeatured, buttonText }) {
+function RentalCard({agentUrl, agencyName, agentName, beds, bathrooms, parking, type, location, inspection, price, isFeatured, buttonContent}) {
+
+const navigate = useNavigate();
+
 
   const settings = {
     dots: true,
@@ -38,7 +42,7 @@ function RentalCard({image, agentUrl, agencyName, agentName, beds, bathrooms, pa
     ];
 
   return (
-    <div className='rentalCard'>
+    <div className='rentalCard' onClick={(e) => navigate('/property')}>
       <div className="rentalCard__imageContainer">
         <Slider {...settings}>
         {Images.map((property) => (
@@ -50,7 +54,7 @@ function RentalCard({image, agentUrl, agencyName, agentName, beds, bathrooms, pa
         {/* Dynamic Button */}
         {isFeatured && (
           <div className="rentalCard__buttonContainer">
-            <p className="rentalCard__buttonText">{buttonText}</p> {/* Dynamically set button text */}
+            <p className="rentalCard__buttonText">{buttonContent}</p> {/* Dynamically set button text */}
           </div>
         )}
       </div>

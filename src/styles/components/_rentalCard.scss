@@ -9,7 +9,9 @@
     box-sizing: border-box;
     margin-left: 8px;
     margin: 5px;
-
+    &:hover {
+      cursor: pointer;
+    }
   }
   
   .rentalCard__imageContainer {
@@ -32,21 +34,18 @@
     position: absolute;
     top: 0;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     padding-top: 3px;
     letter-spacing: 1px;
     height: 30px;
     border-radius: 30px;
     background-color: $light-gray;
-    
-    
-     .rentalCard__buttonText > p {
-    font-weight: 500;
-    text-align: center;
-    font-size: 14px;
-    color: $dark-charcoal ; /* Or any color you prefer */
-    
-  }
+    p {
+      font-weight: 500;
+      text-align: center;
+      font-size: 14px;
+      color: $black;
+    }
 }
   
   .rentalCard__info {
@@ -152,24 +151,37 @@
     }
 }
 
-.slick-dots
-{
-    position: absolute;
-    bottom: 15px;
+.slick-dots {
+  position: absolute;
+  margin-bottom: 27px !important;
+  ;
+}
+.slick-dots li {
+  margin: 0px; /* Adjust this margin to control the space between dots */
+}
 
-    display: block;
+.slick-dots li button {
+  cursor: pointer;
+  
+}
 
-    width: 100%;
-    padding: 0;
-    margin: 0;
+.slick-dots li button:before {
+  color: white !important; /* Default color for non-active dots */
+  opacity: 1;
 
-    list-style: none;
-
-    text-align: center;
 
 }
-.slick-dots > li > button
-{
-  background-color: white;
-  border-radius: 30px;
+
+.slick-dots li.slick-active button:before {
+  color: $soft-orange !important; /* Color for the active dot */
+  font-size: 10px;
+  opacity: 1;
+  
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  color: $soft-orange !important; /* Color for hovered or focused dots */
+  font-size: 8px; /* Optional: Adjust size when hovered or focused */
+  
 }

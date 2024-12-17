@@ -10,6 +10,9 @@
     margin-left: 8px;
     margin: 5px;
     height: 380px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   
   .card__imageContainer {
@@ -40,7 +43,7 @@
     font-weight: 500;
     text-align: center;
     font-size: 14px;
-    color: $dark-charcoal; /* Or any color you prefer */
+    color: $black; /* Or any color you prefer */
   }
 }
   
