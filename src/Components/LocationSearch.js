@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Script from 'react-load-script';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
-const LocationSearch = () => {
+const LocationSearch = ({ onSuburbChange }) => {
   const [address, setAddress] = useState('');
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [inputClicked, setInputClicked] = useState(false);
@@ -55,8 +55,10 @@ const LocationSearch = () => {
       // Combine city and state (city, state)
       if (city && state) {
         setAddress(`${city}, ${state}`); // Show city and state in the input field
+        onSuburbChange(city);
       } else {
         setAddress(''); // Reset if city or state is not found
+        onSuburbChange('');
       }
 
       const latLng = await getLatLng(results[0]);

@@ -1,4 +1,4 @@
-.header { 
+.header__default { 
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -9,6 +9,10 @@
     top: 0; /* Stick it to the top of the page */
     z-index: 1000; /* Ensures it stays above other content */
 }
+.header__other {
+    width: 80%;  // Set 80% width for other pages
+    margin: 0 auto;  // Center the header on the page
+  }
 .header__content { 
     display: flex;
     justify-content: space-between;

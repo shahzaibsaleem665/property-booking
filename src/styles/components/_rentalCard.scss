@@ -54,6 +54,7 @@
     justify-content: center;
     .rentalCard__infoTop {
       display: flex;
+      width: 100%;
       justify-content: space-between;
       align-items: center;
       background-color: $vibrant-orange;
@@ -61,6 +62,7 @@
       margin-top: 7px;
       .MuiAvatar-root {
         margin: 2px;
+        margin-left: 10px;
       }
       
       .rentalCard__infoTopDetails {
@@ -68,7 +70,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
-        width: 180px;
+        width: 200px;
+        margin-right: 5px;
       }
       p {
         margin: auto;
@@ -84,19 +87,22 @@
     .rentalCard__infoTitle {
         display: flex;
         align-items: center;
-        margin-left: 2px;
-        p { 
-          text-align: center;
-          justify-self: center;
+        gap: 5px;
+        margin: 5px 0px 0px 10px;
+        color: $dark-charcoal;
+        font-weight: 550;
+        .infoItem {
           display: flex;
-          margin: 5px;;
-          font-weight: 550;
-          color: $black;
-          .MuiSvgIcon-root {
-            margin-right: 5px;
-            color: $primary-text !important;
-            font-size: x-large;
-          }
+          align-items: center;
+        }
+        
+        .infoIcon {
+          margin-right: 8px; /* Space between the icon and the text */
+          font-size: 20px; /* Adjust the icon size if needed */
+        }
+        
+        span {
+          font-size: 14px; /* Adjust text size */
         }
                 
     }
@@ -114,7 +120,8 @@
             .address {
               color: $black;
               font-weight: 500;
-              max-width: 170px;
+              font-size: 14px;
+              max-width: 200px;
               &:hover {
                 color: $vibrant-orange;
                 cursor: pointer;
@@ -123,13 +130,14 @@
              p {
                 margin: 0px;
                 color: $secondary-text;
-                font-size: 16px;
+                font-size: 14px;
 
             }
             .rentalCard__price {
                 font-weight: 500;
                 color: $black;
                 margin-top: 5px;
+                font-size: 14px;
             }
         }
         .rentalCard__infoHeart {

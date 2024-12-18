@@ -9,10 +9,17 @@ import Guest from '../Components/Guest';
 import FilterButtons from '../Components/FilterButtons';
 import StayType from '../Components/StayType';
 import MoveinDate from '../Components/MoveinDate';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
+
+
+  const location = useLocation();
   const navigate = useNavigate();
+  
+  const headerMainClass = location.pathname === '/' ? 'header__default' : 'header__other';
+
+
   const [drawerOpen, setDrawerOpen] = useState(false); 
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [userType, setUserType] = useState('guest');
@@ -31,11 +38,12 @@ function Header() {
   const handleStayTypeChange = (newType) => setStayType(newType);
 
   return (
-    <div className="header">
+    <div className={headerMainClass}>
       <div className="header__content">
         <div className="header__left">
           <img src={logo_black} alt="logo" onClick={(e) => navigate('/')} />
         </div>
+     
         {(userType === 'renter' || userType === 'guest') && (
           <div className="header__middle">
             <div className="header__stayType">
@@ -67,6 +75,7 @@ function Header() {
             <SearchIcon className="search__icon" />
           </div>
         )}
+   
         <div className="header__right">
           <Avatar
             onClick={handleDrawerToggle}

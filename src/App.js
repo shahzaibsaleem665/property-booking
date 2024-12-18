@@ -8,6 +8,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Login from './Components/Login';
 import Property from './Pages/Property';
+import ImageDetails from './Components/ImageDetails';
 
 
 function App() {
@@ -26,9 +27,17 @@ function App() {
             </GoogleOAuthProvider>
           } />
 
-            <Route path='/property' element={(         
+            <Route path="/property/:typeOf/:addressSlug" element={(         
             <>
               <Property />
+            </>
+          )}
+          
+          />  
+
+<Route path="/imagedetails" element={(         
+            <>
+              <ImageDetails />
             </>
           )}
           

@@ -13,7 +13,22 @@ import { useNavigate } from 'react-router-dom';
 
 function RentalCard({agentUrl, agencyName, agentName, beds, bathrooms, parking, type, location, inspection, price, isFeatured, buttonContent}) {
 
+
+
 const navigate = useNavigate();
+const createSlug = (address) => {
+  return address
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/[^\w\-]+/g, ''); // Remove any special characters
+};
+
+const handleCardClick = () => {
+  // Navigate to the dynamic property page with ID and address slug
+  const addressSlug = createSlug(location);
+  const typeOf = createSlug(type);
+  navigate(`/property/${typeOf}/${addressSlug}`);
+};
 
 
   const settings = {
@@ -42,7 +57,7 @@ const navigate = useNavigate();
     ];
 
   return (
-    <div className='rentalCard' onClick={(e) => navigate('/property')}>
+    <div className='rentalCard' onClick={handleCardClick}>
       <div className="rentalCard__imageContainer">
         <Slider {...settings}>
         {Images.map((property) => (
@@ -68,11 +83,26 @@ const navigate = useNavigate();
           </div>
         </div>
         <div className="rentalCard__infoTitle">
-          <p><BathtubOutlinedIcon /> {bathrooms}</p> 
-          <p><BedOutlinedIcon style={{marginTop: '2px'}} /> {beds} </p>
-          <p><DirectionsCarFilledOutlinedIcon /> {parking}  - </p>  
-          <p>{type}</p>
-        </div>
+  <div className="infoItem">
+    <BathtubOutlinedIcon className="infoIcon" style={{marginBottom:'3px'
+    }} />
+    <span>{bathrooms}</span>
+  </div>
+  
+  <div className="infoItem">
+    <BedOutlinedIcon className="infoIcon" />
+    <span>{beds}</span>
+  </div>
+  
+  <div className="infoItem">
+    <DirectionsCarFilledOutlinedIcon className="infoIcon" />
+    <span>{parking} -</span>
+  </div>
+  
+  <div className="infoItem">
+    <span>{type}</span>
+  </div>
+</div>
         <div className="rentalCard__infoDesc">
             <div className="rentalCard__infoText">
             <p className='address'>{location}</p>
