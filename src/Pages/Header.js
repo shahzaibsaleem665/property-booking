@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import logo_black from '../Images/logo_black.svg';
 import SearchIcon from '@mui/icons-material/Search';
 import { Avatar } from '@mui/material';
-import Sidebar from '../Components/Sidebar';
-import RangePicker from '../Components/RangePicker';
-import LocationSearch from '../Components/LocationSearch';
-import Guest from '../Components/Guest';
-import FilterButtons from '../Components/FilterButtons';
-import StayType from '../Components/StayType';
-import MoveinDate from '../Components/MoveinDate';
+import Sidebar from '../Components/AuthUser/Sidebar';
+import RangePicker from '../Components/HeaderComponent/RangePicker';
+import LocationSearch from '../Components/HeaderComponent/LocationSearch';
+import Guest from '../Components/HeaderComponent/Guest';
+import FilterButtons from '../Components/Filters/FilterButtons';
+import StayType from '../Components/HeaderComponent/StayType';
+import MoveinDate from '../Components/HeaderComponent/MoveinDate';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {

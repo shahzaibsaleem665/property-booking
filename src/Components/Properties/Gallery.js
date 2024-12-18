@@ -74,7 +74,7 @@ function Gallery() {
             cols: 1, // Specify the number of columns for this image
       rows: 1,
           },
-          
+
     
        
        

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import { Visibility, VisibilityOff } from '@mui/icons-material';  // Material UI Icons
-import google_icon from '../Images/google_icon.png';
-import facebook_icon from '../Images/facebook_icon.png';
-import mail_icon from '../Images/mail_icon.png';
+import google_icon from '../../Images/google_icon.png';
+import facebook_icon from '../../Images/facebook_icon.png';
+import mail_icon from '../../Images/mail_icon.png';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import InputAdornment from '@mui/material/InputAdornment';
 import InputMask from 'react-input-mask';

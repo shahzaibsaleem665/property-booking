@@ -11,8 +11,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SideBarItem from './SideBarItem'; // Import the SideBarItem component
 import DashboardIcon from '@mui/icons-material/Dashboard';
-
-import shahzaib from '../Images/shahzaib.jpeg';
+import shahzaib from '../../Images/shahzaib.jpeg';
 import { useNavigate } from 'react-router-dom';
 
 function Sidebar({ drawerOpen, handleDrawerToggle }) {

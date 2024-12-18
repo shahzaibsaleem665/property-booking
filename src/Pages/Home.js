@@ -1,12 +1,12 @@
 import React from 'react';
-import RentalCard from '../Components/RentalCard';
+import RentalCard from '../Components/Properties/RentalCard';
 import shahzaib from '../Images/shahzaib.jpeg';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Card from '../Components/Card';
+import Card from '../Components/Properties/Card';
 
 function Home() {
 

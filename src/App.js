@@ -3,12 +3,12 @@ import Header from './Pages/Header';
 import Home from './Pages/Home';
 import './styles/main.scss';
 import HeroSection from './Components/HeroSection';
-import SignUp from './Components/SignUp';
+import SignUp from './Components/AuthUser/SignUp';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import Login from './Components/Login';
+import Login from './Components/AuthUser/Login';
 import Property from './Pages/Property';
-import ImageDetails from './Components/ImageDetails';
+import ImageDetails from './Components/Properties/ImageDetails';
 
 
 function App() {

@@ -1,28 +1,37 @@
 // Abstracts
 @import 'abstracts/variables';
 @import 'abstracts/mixin';
+
+// Base Styles
+@import 'base/reset';
+@import 'base/typography';
+
 // Components
 @import 'components/heroSection';
-@import 'components/rangePicker';
-@import 'components/locationSearch';
-@import 'components/guest';
-@import 'components/filterButton';
-@import 'components/signup';
-@import 'components/login';
-@import 'components/sideBar';
-@import 'components/amenities';
-@import 'components/card';
-@import 'components/stayType';
-@import 'components/moveInDate';
-@import 'components/rentalCard';
-@import 'components/gallery';
+
+// headerComponents 
+@import 'components/headerComponent/stayType';
+@import 'components/headerComponent/moveInDate';
+@import 'components/headerComponent/rangePicker';
+@import 'components/headerComponent/locationSearch';
+@import 'components/headerComponent/guest';
+
+// filter components
+@import 'components/filters/amenities';
+@import 'components/filters/filterButton';
+
+// authUser
+@import 'components/authUser/signup';
+@import 'components/authUser/login';
+@import 'components/authUser/sideBar';
+
+// properties
+@import 'components/properties/card';
+@import 'components/properties/rentalCard';
+@import 'components/properties/gallery';
 
 // Pages
 @import 'pages/header';
 @import 'pages/home';
 @import 'pages/property';
-// Base Styles
-@import 'base/reset';
-@import 'base/typography';
-
 
