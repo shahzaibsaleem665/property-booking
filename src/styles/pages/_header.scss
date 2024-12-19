@@ -10,8 +10,24 @@
     z-index: 1000; /* Ensures it stays above other content */
 }
 .header__other {
-    width: 80%;  // Set 80% width for other pages
-    margin: 0 auto;  // Center the header on the page
+    width: 100%;  // Set 80% width for other pages
+    
+    border-bottom: 1px solid $light-gray;
+    .header__content {
+        width: 75%;
+        margin: auto;
+        padding: 10px 20px 10px 20px;
+
+        .header__left { 
+            img { 
+                height: 40px;
+                width: 120px;
+            }
+        }
+        .header__middle { 
+            display: none;
+        }
+    }
   }
 .header__content { 
     display: flex;

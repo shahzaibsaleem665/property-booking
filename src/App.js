@@ -29,6 +29,7 @@ function App() {
 
             <Route path="/property/:typeOf/:addressSlug" element={(         
             <>
+            <Header />
               <Property />
             </>
           )}
